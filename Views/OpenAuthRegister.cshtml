@@ -1,0 +1,64 @@
+﻿@{
+    var userName = Request.QueryString["UserName"];
+    var externalLoginData = Request.QueryString["ExternalLoginData"];
+
+    Script.Require("Theme-ValidationEngine-en");
+    Script.Require("Theme-ValidationEngine");
+
+    Style.Require("Theme-ValidationEngine");
+}
+
+@using (Script.Foot()) {
+    <script type="text/javascript">
+        $(function () {
+            $(".alert").alert();
+
+            $('form').validationEngine({
+                promptPosition: 'centerRight'
+            });
+        });
+    </script>
+}
+
+@if (Html.ValidationSummary() != null) {
+    <div class="alert alert-danger">
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+        <strong>Error:</strong>
+        <p>@Html.ValidationSummary()</p>
+    </div>
+}
+
+<h3>@Html.TitleForPage(T("Register with " + WorkContext.CurrentSite.SiteName))</h3>
+
+@using (Html.BeginFormAntiForgeryPost(Url.Action("Register"), FormMethod.Post, new { @class = "form-horizontal col-xs-12 col-md-6" })) {
+    if (!string.IsNullOrWhiteSpace(userName) && !string.IsNullOrWhiteSpace(externalLoginData)) {
+        <h5>@T("This user account will be linked to <b>{0}</b> when you login.", userName)</h5>
+    }
+    <!-- Username -->
+    <div class="form-group">
+        @Html.TextBox("username", string.Empty, new { @class = "border-radius validate[required,ajax[ajaxUserName]]", placeholder = "Username", autofocus = "autofocus", autocomplete = "off" })
+        @Html.ValidationMessage("username")
+    </div>
+    <!-- Email -->
+    <div class="form-group">
+        @Html.TextBox("email", string.Empty, new { @class = "border-radius validate[required,custom[email],ajax[ajaxUserEmail]]", type = "email", placeholder = "Email", autocomplete = "off" })
+        @Html.ValidationMessage("email")
+    </div>
+    <!-- Password -->
+    <div class="form-group">
+        @Html.Password("password", string.Empty, new { @class = "border-radius validate[required,minSize[" + ViewData["PasswordLength"] + "]]", placeholder = "Password", autocomplete = "off" })
+        @Html.ValidationMessage("password")
+    </div>
+    <!-- Password Confirm -->
+    <div class="form-group">
+        @Html.Password("confirmpassword", string.Empty, new { @class = "border-radius validate[required,minSize[" + ViewData["PasswordLength"] + "],equals[password]]", placeholder = "Confirm Password", autocomplete = "off" })
+        @Html.ValidationMessage("confirmPassword")
+    </div>
+    <!-- Buttons -->
+    <div class="form-group">
+        <input type="submit" class="border-radius" value="@T("Register")" />
+    </div>
+    <div class="form-group">
+        Already have account? @Html.ActionLink(T("Login").ToString(), "LogOn", new { Controller = "Account", Area = "Orchard.Users", ReturnUrl = (Request.QueryString["ReturnUrl"] ?? Request.RawUrl) }, new { rel = "nofollow" })
+    </div>
+}

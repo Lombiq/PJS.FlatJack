@@ -1,0 +1,8 @@
+﻿@using Orchard.Search.ViewModels;
+
+@using (Html.BeginForm("index", "search", new { area = "Orchard.Search" }, FormMethod.Get, new { @class = "search", role = "form" })) {
+    <div class="form-group">
+        <input name="q" value="@((SearchViewModel)Model.ViewModel.Query)" class="border-radius" type="search" placeholder="search...">
+        <input type="submit" class="hide-text border-radius backgroundHighlight" />
+    </div>
+}

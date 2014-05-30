@@ -1,0 +1,93 @@
+﻿@using NGM.OpenAuthentication.Extensions
+@using NGM.OpenAuthentication.Models
+@using Orchard.ContentManagement
+@using Orchard.Utility.Extensions
+
+@{
+    var userCanRegister = WorkContext.CurrentSite.As<Orchard.Users.Models.RegistrationSettingsPart>().UsersCanRegister;
+    var enableLostPassword = WorkContext.CurrentSite.As<Orchard.Users.Models.RegistrationSettingsPart>().EnableLostPassword;
+
+    var clientsData = (List<OrchardAuthenticationClientData>)Model.ClientsData;
+
+    var userName = Request.QueryString["UserName"];
+    var externalLoginData = Request.QueryString["ExternalLoginData"];
+    var returnUrl = Request.QueryString["ReturnUrl"];
+
+    Script.Require("Theme-ValidationEngine-en");
+    Script.Require("Theme-ValidationEngine");
+
+    Style.Require("Theme-ValidationEngine");
+    Style.Require("Bootstrap-Social");
+    
+    using (Script.Foot()) {
+        <script type="text/javascript">
+            $(function () {
+                $('.alert').alert();
+
+                $('form').validationEngine({
+                    promptPosition: 'centerRight'
+                });
+            });
+        </script>
+    }
+}
+
+@if (Model.Title == "Access Denied") {
+    <div class="alert alert-danger fade in">
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+        <strong>@Html.TitleForPage(T("Access Denied").ToString())</strong>
+        <p>@T("You do not have permission to complete your request.")</p>
+    </div>
+}
+
+@if (Html.ValidationSummary() != null) {
+    <div class="alert alert-danger fade in">
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+        <strong>Error:</strong>
+        <p>@Html.ValidationSummary()</p>
+    </div>
+}
+
+<h3>@Html.TitleForPage("Sign In to " + WorkContext.CurrentSite.SiteName)</h3>
+
+@if (clientsData.Any()) {
+    using (Html.BeginFormAntiForgeryPost(Url.OpenAuthLogOn(returnUrl), FormMethod.Post, new { @class = "border-radius", @style = "text-align:center;" })) {
+        foreach (OrchardAuthenticationClientData clientData in clientsData) {
+            <a class="btn btn-social-icon btn-lg btn-@clientData.ProviderName.Replace("google", "google-plus")" href="#" onclick="document.getElementById('providerName').value='@clientData.ProviderName'; get_form(this).submit(); return false" title="@T("Log in using your {0} account", clientData.DisplayName)"><i class="fa fa-@clientData.ProviderName.Replace("google", "google-plus")"></i></a>
+            @Html.Hidden("providerName")
+        }
+    }
+}
+
+@using (Html.BeginFormAntiForgeryPost(Url.LogOn(returnUrl, userName, externalLoginData), FormMethod.Post, new { @class = "border-radius col-xs-12 col-md-6" })) {
+    <!-- Username -->
+    <div class="form-group">
+        @Html.TextBox("userNameOrEmail", "", new { id = "username-email", @class = "border-radius validate[required]", placeholder = "Username or Email", autofocus = "autofocus", autocomplete = "off" })
+        @Html.ValidationMessage("userNameOrEmail")
+    </div>
+    <!-- Password -->
+    <div class="form-group">
+        @Html.Password("password", string.Empty, new { @class = "border-radius validate[required]", placeholder = "Password", autocomplete = "off" })
+        @Html.ValidationMessage("password")
+    </div>
+    <!-- Remember me -->
+    <div class="form-group">
+        <div class="checkbox">
+            <label>
+                @Html.CheckBox("rememberMe", new { id = "remember-me" })
+                @T("Remember me")
+            </label>
+        </div>
+    </div>
+    <!-- Buttons -->
+    <div class="form-group">
+        <input type="submit" class="border-radius" value="@T("Login")" />
+    </div>
+    
+    if (userCanRegister) {
+    <div class="form-group">
+        Don't have Account? @Html.ActionLink(T("Register").Text, "Register")<br />
+        @if (enableLostPassword) { @Html.ActionLink(T("Lost your Password?").Text, "RequestLostPassword") }
+    </div>
+    }
+}

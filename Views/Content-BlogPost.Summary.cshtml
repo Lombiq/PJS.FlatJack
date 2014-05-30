@@ -1,0 +1,40 @@
+﻿@using Orchard.ContentManagement;
+@using Orchard.MediaLibrary.Fields
+
+@{ 
+    var blogPost = Model.ContentItem;
+    var part = (Orchard.ContentManagement.ContentPart)Model.ContentItem.BlogPostPart;
+    var imageField = part.Fields.Where(field => field.PartFieldDefinition.Name == "BlogPostImage").SingleOrDefault() as MediaLibraryPickerField;
+}
+<div class="row blog">
+    <div id="blogpost-@blogPost.Id" class="col-xs-12 single">
+        <div class="inner">
+            <div class="row">
+                <div class="col-xs-4 img">
+                    <a href="@Url.ItemDisplayUrl((IContent)blogPost)">
+                        @if (imageField != null) {
+                            foreach (var mediapart in Model.ContentItem.BlogPostPart.BlogPostImage.MediaParts) {
+                                <img src="@mediapart.MediaUrl" alt="@mediapart.AlternateText" />
+                            }
+                        }
+                        <span class="date text-center">
+                            <span class="number">@blogPost.CommonPart.CreatedUtc.ToLocalTime().ToString("dd")</span>
+                            <span class="month">@blogPost.CommonPart.CreatedUtc.ToLocalTime().ToString("MMM").ToLower()</span>
+                        </span>
+                    </a>
+                </div>
+                <div class="col-xs-8">
+                    <header>
+                        <h2 class="texthighlight"><a href="@Url.ItemDisplayUrl((IContent)blogPost)">@blogPost.TitlePart.Title</a></h2>
+                    </header>
+                    @Display(Model.Summary)
+                    <footer>
+                        <span><em>Author:</em> <a href="/Search?q=@blogPost.CommonPart.Owner.UserName">@blogPost.CommonPart.Owner.UserName</a></span>
+                        <span><em>Posted in:</em> @Display(Model.Tags)</span>
+                        <span><em>It has:</em> <a href="@Url.ItemDisplayUrl((IContent)blogPost)">@Display(Model.CommentsCount)</a></span>
+                    </footer>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

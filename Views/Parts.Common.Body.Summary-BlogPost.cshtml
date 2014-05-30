@@ -1,0 +1,11 @@
+﻿@using Orchard.ContentManagement;
+
+@{ 
+    var blogPost = Model.ContentItem;
+
+    string bodyHtml = Model.Html.ToString();
+    var body = new HtmlString(Html.Excerpt(bodyHtml, 300).ToString().Replace(Environment.NewLine, "</p>" + Environment.NewLine + "<p>"));
+}
+
+<p>@body</p>
+<p><a href="@Url.ItemDisplayUrl((IContent)blogPost)"><strong>Read More</strong></a></p>

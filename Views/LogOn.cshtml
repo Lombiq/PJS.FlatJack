@@ -1,0 +1,72 @@
+﻿@using Orchard.ContentManagement
+
+@{
+    Script.Require("Theme-ValidationEngine-en");
+    Script.Require("Theme-ValidationEngine");
+
+    Style.Require("Theme-ValidationEngine");
+    
+    var userCanRegister = WorkContext.CurrentSite.As<Orchard.Users.Models.RegistrationSettingsPart>().UsersCanRegister;
+    var enableLostPassword = WorkContext.CurrentSite.As<Orchard.Users.Models.RegistrationSettingsPart>().EnableLostPassword;
+    
+    using (Script.Foot()) {
+        <script type="text/javascript">
+            $(function () {
+                $('.alert').alert();
+
+                $('form').validationEngine({
+                    promptPosition: 'centerRight'
+                });
+            });
+        </script>
+    }
+}
+
+@if (Model.Title == "Access Denied") {
+    <div class="alert alert-danger fade in">
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+        <strong>@Html.TitleForPage(T("Access Denied").ToString())</strong>
+        <p>@T("You do not have permission to complete your request.")</p>
+    </div>
+}
+
+@if (Html.ValidationSummary() != null) {
+    <div class="alert alert-danger fade in">
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+        <strong>Error:</strong>
+        <p>@Html.ValidationSummary()</p>
+    </div>
+}
+
+<h3>@Html.TitleForPage("Sign In to " + WorkContext.CurrentSite.SiteName)</h3>
+
+@using (Html.BeginFormAntiForgeryPost(Url.Action("LogOn", new { ReturnUrl = Request.QueryString["ReturnUrl"] }), FormMethod.Post, new { @class = "border-radius col-xs-12 col-md-6" })) {
+    <!-- Username -->
+    <div class="form-group">
+        @Html.TextBox("userNameOrEmail", "", new { id = "username-email", @class = "border-radius validate[required]", placeholder = "Username or Email", autofocus = "autofocus", autocomplete = "off" })
+    </div>
+    <!-- Password -->
+    <div class="form-group">
+        @Html.Password("password", string.Empty, new { @class = "border-radius validate[required]", placeholder = "Password", autocomplete = "off" })
+    </div>
+    <!-- Remember me -->
+    <div class="form-group">
+        <div class="checkbox">
+            <label>
+                @Html.CheckBox("rememberMe", new { id = "remember-me" })
+                @T("Remember me")
+            </label>
+        </div>
+    </div>
+    <!-- Buttons -->
+    <div class="form-group">
+        <input type="submit" class="border-radius" value="@T("Login")" />
+    </div>
+    
+    if (userCanRegister) {
+        <div class="form-group">
+            Don't have Account? @Html.ActionLink(T("Register").Text, "Register")<br />
+            @if (enableLostPassword) { @Html.ActionLink(T("Lost your Password?").Text, "RequestLostPassword") }
+        </div>
+    }
+}

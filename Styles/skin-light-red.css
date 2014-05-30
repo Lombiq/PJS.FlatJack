@@ -1,0 +1,335 @@
+/* COLOR SCHEMES
+   ============================= 
+   FLATJACK comes with two main colour* schemes.
+   DARK and LIGHT colour schemes also have individual recommended highlight colours, which are shown underneath.
+   
+   *colour here is spelt correctly.
+   
+	DARK SCHEME
+	-----------
+	Body background colour:						#37393d;
+	Nav background colour:						#222427;
+	Heading background colour:					#2b2d31;
+	Text colour:								#777d90;
+	Link hover colour:							#dee4e8;
+	Rule colour:								#4d4f53;
+	Secondary colour:							#ffffff;
+	Third colour:								#28292d;
+	
+		HIGHLIGHT COLOURS
+		-----------------
+		Red:									#d03333;
+		Blue:									#63abde;
+		Purple:									#c563de;
+		Green:									#63debd;
+		Green Two:								#83de63;
+		
+	LIGHT SCHEME
+	-----------
+	Body background colour:						#eaeaea;
+	Nav background colour: 						#e3e3e3;
+	Heading background colour:					#e3e3e3;
+	Text colour: 								#525658;
+	Link hover colour:							@highlight;
+	Rule colour:								#dadada;
+	Secondary colour:							#28292d;
+	Third colour:								#eaeaea;
+		
+		HIGHLIGHT COLOURS
+		-----------------
+		Red:									#885e5e;
+		Blue:									#5e6988;
+		Purple:									#7e5e88;
+		Green:									#71885e;
+		Green Two:								#5e8886;
+*/
+
+/* TEXT COLOURS
+   =============================  */
+   
+   .texthighlight,
+	a,
+	a:link,
+	a:visited,
+	a:active,
+	.overlay,
+	.sectionheader,
+	.mainNavigation nav #menu-main-menu li.current ul li a,
+	.mainNavigation nav #menu-main-menu li a,
+	.mainNavigation nav #menu-main-menu li ul li a,
+	.mainNavigation nav #menu-main-menu li ul ul li a,
+	.footer .footer-top ul.popular-posts li i,
+	.portfolio aside h3,
+	.portfolio .filter-links li,
+	.main h3,
+	.columns h3,
+	.columns h5,
+	.breadcrumbs nav ul li a,
+	.team .teamMember h4,
+	.sidebar-widget ul li i,
+	.comments .comment ul li .commentp span a,
+	.portfolio-single .projectMeta li span,
+	.footer h3,
+    ul.archiveMonthList li:before
+	{ color: #885e5e; }
+	
+	body,
+	.fourohfourinner .fourohfour,
+	.footer .footer-top #s,
+	.footer .footer-top ul.popular-posts li a,
+	.newsletter .email-cta input[type=text],
+	.newsletter .email-cta input[type=email],
+	.columns form.search input[type=search],
+	.breadcrumbs nav ul li,
+	.sidebar-widget ul li a,
+	.pagination nav a:hover,
+    .pagination > li > a:hover,
+	.blog .single footer span,
+	.features .container .row div h3 .circle i,
+	.columns .social .circle i,
+	.team .teamMember .circle i
+	{ color: #525658; }
+	
+	.columns form.search input[type=search]::-webkit-input-placeholder { color: #525658; }
+	.columns form.search input[type=search]::-moz-placeholder { color: #525658; }
+	.columns form.search input[type=search]:-ms-input-placeholder { color: #525658; }
+	
+	.hometitle,
+	.mainNavigation nav #menu-main-menu li.current,
+	.mainNavigation nav #menu-main-menu li.current a,
+	.mainNavigation nav #menu-main-menu li.current ul li:hover a, 
+	.mainNavigation nav #menu-main-menu li.current ul li.current a,
+	.mainNavigation nav #menu-main-menu li a:hover,
+	.mainNavigation nav #menu-main-menu li ul li:hover > a,
+	.mainNavigation nav #menu-main-menu li ul ul li:hover > a,
+	.footer .footer-top ul.popular-posts li a:hover,
+	.features h3,
+	.newsletter h3,
+	.sidebar-widget ul li a:hover,
+	.overlay h3,
+	.features h1
+	{ color: #885e5e; }
+	
+	.footer .footer-top hr,
+	.pagination.post .postPagination,
+	.blog .single .date,
+	.article .date span,
+	.article.alt .date
+	{ color: #eaeaea; }
+
+	.postPagination a
+	{ color: #eaeaea; }
+	
+	.footer .social .circle i
+	{ color: #2b2d31; }
+	
+	.portfolio .portfolio-home ul li a.overlay h3,
+	.portfolio-small div figure figcaption a,
+	.latest-posts div figure figcaption a,
+	.portfolio1 .single figure figcaption a,
+	.pagination nav a,
+    .pagination > li > a,
+	.blog .single footer span a,
+	.article .meta span a,
+	.portfolio-single .projectMeta li a,
+	dt
+	{ color: #28292d; }
+	
+	.flexslider figure .captions a.title,
+	.flexslider figure .captions span.title,
+	.flexslider figure .captions a.caption,
+	.flexslider figure .captions span.caption
+	{ color: #d6dbdf; }
+	
+	.columns form.search input[type=submit],
+	.columns form input[type=submit],
+	.blog .single .date .month,
+	.article.alt .date .month,
+	.blog .single .date .number,
+	.article.alt .date .number,
+	.article .date .number,
+	.article .date .month,
+	.newsletter .email-cta input[type=submit],
+	.pagination nav a,
+    .pagination > li > a,
+	.author .next,
+	.author .prev
+	{ color: #ffffff; }
+	
+	.columns form input[type=text],
+    .columns form input[type=password],
+	.columns form input[type=email],
+	.columns form input[type=search],
+    .columns form input[type=url],
+	.columns form textarea
+	{ color: #cfcfcf; }
+	
+	.article article p:first-of-type
+	{ color: #acafbc; }
+	
+	.portfolio-single .carousel .slides li a span
+	{ color: #f6f6f6; }
+	
+	aside h3
+	{ color: #d03333; }
+	
+	.portfolio .portfolio-home ul li a .overlay h3
+	{ color: #28292d; }
+   
+/* BACKGROUND COLOURS
+   =============================  */
+   
+	.backgroundhighlight,
+	.overlay,
+	.footer .footer-top #searchsubmit,
+	.portfolio .portfolio-home ul li a.overlay,
+	.flex-control-paging li a,
+	.portfolio-small div figure .overlay,
+	.newsletter .email-cta input[type=submit],
+	.columns form.search input[type=submit],
+	.columns form input[type=submit],
+	.portfolio1 .single figure .overlay,
+	.pagination nav a,
+    .pagination > li > a,
+	.blog .single .date .number,
+	.article.alt .date .number,
+	.portfolio-single .portfolioslider .flex-direction-nav .flex-prev,
+	.portfolio-single .portfolioslider .flex-direction-nav .flex-next,
+	.portfolio-single .carousel .flex-direction-nav li a.flex-prev,
+	.portfolio-single .carousel .flex-direction-nav li a.flex-next,
+    .nav-pills > li.active > a, .nav-pills > li.active > a:hover, .nav-pills > li.active > a:focus,
+	.mainNavigation nav #menu-main-menu li ul
+	{ background-color: #885e5e; }
+	
+	::selection { background-color: #dadada; }
+	::-moz-selection { background-color: #dadada; }
+	
+	.table-responsive,
+	.footer,
+	.heading,
+	.portfolio-small div figure figcaption a,
+	.latest-posts div figure figcaption a,
+	.newsletter,
+	.columns .social .circle,
+	.team .teamMember .circle,
+	.portfolio1 .single figure figcaption a,
+	.pagination nav a:hover,
+    .pagination > li > a:hover,
+    .nav-pills > li > a:hover,
+	.blog .single .inner,
+	.author
+	{ background-color: #e3e3e3; }
+	
+	body,
+	.footer .footer-top #s,
+	.footer .footer-top hr,
+	.footer .social .circle,
+	.newsletter .email-cta input[type=text],
+	.newsletter .email-cta input[type=email],
+	.columns form input[type=text],
+    .columns form input[type=password],
+	.columns form input[type=email],
+	.columns form input[type=search],
+    .columns form input[type=url],
+	.columns form textarea
+	{ background-color: #eaeaea; }
+	
+	.breadcrumbs
+	{ background-color: #eaeaea; }
+	
+	.header,
+	.mainNavigation nav #menu-main-menu li ul,
+	.footer-bottom,
+	.columns form,
+	.columns form.search input[type=search]
+	{ background-color: #e3e3e3; }
+	
+	.blog .single .date .month,
+	.article.alt .date .month
+	{ background-color: #222427; }
+	
+	.flex-control-paging li a.flex-active
+	{ background-color: #885e5e; }
+	
+	.flexslider figure .captions a.title,
+	.flexslider figure .captions span.title,
+	.flexslider figure .captions a.caption,
+	.flexslider figure .captions span.caption,
+	.hugeImage span {
+		background-color: #222427; /* fallback for browsers that don't support RGBA */
+		background-color: rgba(34, 36, 39, 0.6);
+	}
+	
+	.hugeImage span { background-color: rgba(34, 36, 39, 0.8); }
+   
+
+/* BORDER COLOURS
+   =============================  */
+
+	p a:hover,
+	span a:hover,
+	.header,
+	.mainNavigation nav #menu-main-menu li.current,
+	.mainNavigation nav #menu-main-menu li ul,
+	.flex-control-nav,
+	.blog .single h2 a:hover
+	{ border-color: #885e5e; }
+
+	.alert a,
+	.hugeheading,
+	.articletitle,
+	.portfolio .filter-links,
+	.team .teamMember .social,
+	.clients .client a,
+	.sidebar-widget ul li,
+	.blog .single footer,
+	.article.alt .authorInfo,
+	aside h3
+	{ border-color: #dadada; }
+	
+	.sectionheader,
+	.borderBottom,
+	.features,
+	.main h3,
+	.columns h3,
+	aside h3
+	{ border-color: #4d4f53; }
+	
+	.footer .footer-top #s,
+	.newsletter .email-cta input[type=text],
+	.newsletter .email-cta input[type=email]
+	{ border-color: #ccc; }
+	
+	.footer .footer-top ul.popular-posts li
+	{ border-color: #eaeaea; }
+	
+	.breadcrumbs
+	{ border-color: #e3e3e3; }
+
+
+/* OUTLINE COLOURS
+   =============================  */
+
+	input[type=text]:focus,
+	input[type=email]:focus,
+	input[type=password]:focus,
+	input[type=search]:focus,
+    input[type=url]:focus,
+	textarea:focus
+	{ outline-color: #dadada; }
+	
+	
+/* BOX SHADOW
+   =============================
+   As far as I am aware, it is impossible to break the box-shadow CSS away from the colour,
+   such as border, e.g.
+   border: 2px solid #fff, could be set as border-width: 2px; border-style: solid; border-color: #fff.
+   This normally enables the width and style to be set in the main CSS file, and the colour elements here,
+   however at the moment the whole box-shadow CSS line will have to be added in this file.
+*/
+   
+	.portfolio .portfolio-home ul li a.overlay { box-shadow: 0px 0px 5px 0px #222427; }
+	.portfolio-small div figure,
+	.latest-posts div figure,
+	.portfolio .portfolio-home ul li a img,
+	.portfolio1 .single figure { box-shadow: 0px 0px 5px 0px #e3e3e3; }

@@ -1,0 +1,12 @@
+﻿@using Orchard.Tags.Models
+
+<section class="sidebar-widget">
+    <ul>
+        @foreach (TagCount tagCount in ((IEnumerable<TagCount>)Model.TagCounts).OrderByDescending(x => x.Count).Take(6)) {
+            <li>
+                <span><i class="fa fa-chevron-right"></i>@Html.ActionLink(tagCount.TagName, "Search", "Home", new { area = "Orchard.Tags", tagName = tagCount.TagName }, null)</span>
+                <span>(@tagCount.Count)</span>
+            </li>
+        }
+    </ul>
+</section>

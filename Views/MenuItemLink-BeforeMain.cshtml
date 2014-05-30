@@ -1,0 +1,7 @@
+﻿@if (Model.Text.ToString() == "Home") {
+    <a href="@Model.Href">@Model.Text</a>
+}
+else {
+    <i class="fa fa-angle-right"></i>
+    <a href="@Model.Href">@Model.Text</a>
+}

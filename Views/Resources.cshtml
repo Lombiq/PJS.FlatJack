@@ -1,0 +1,23 @@
+﻿@using Orchard.ContentManagement;
+@using Orchard.UI.Resources;
+@using PJS.FlatJack.Models;
+
+@{
+    var settings = WorkContext.CurrentSite.As<ThemeSettingsPart>();
+
+    var theme = WorkContext.CurrentTheme;
+
+    RegisterLink(new LinkEntry { Type = "image/x-icon", Rel = "shortcut icon", Href = Url.Content(theme.Location + "/" + theme.Path + "/Content/" + "favicon.ico") });
+    RegisterLink(new LinkEntry { Rel = "apple-touch-icon", Href = Url.Content(theme.Location + "/" + theme.Path + "/Content/" + "apple-touch-icon.png") });
+
+    SetMeta(new MetaEntry { Name = "viewport", Content = "width=device-width, initial-scale=1.0" });
+    SetMeta(httpEquiv: "X-UA-Compatible", content: "IE=edge,chrome=1");
+
+    Style.Include("http://fonts.googleapis.com/css?family=Lato:300,400,700");
+
+    Style.Require("ThemeStyle");
+    Style.Include("skin-" + settings.Base + "-" + settings.Highlight);
+
+    Script.Include("~/Core/Shapes/Scripts/html5.js").UseCondition("lt IE 9").AtHead();
+    Script.Require("ThemeScript");
+}

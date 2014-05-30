@@ -1,0 +1,35 @@
+﻿@using Orchard.ContentManagement;
+@using Orchard.Blogs.Models;
+@using Orchard.MediaLibrary.Fields
+@using System.Linq;
+
+@{
+    IEnumerable<object> blogPosts = Model.ContentItems.ContentItems;
+}
+
+@if (blogPosts == null || blogPosts.Count() < 1) {
+    <p>@T("No posts.")</p>
+}
+else {
+    <ul class="recent-posts">
+        @foreach (dynamic post in blogPosts) {
+            string title = post.Title;
+            ContentItem contentItem = post.ContentItem;
+            var part = (Orchard.ContentManagement.ContentPart)post.ContentItem.BlogPostPart;
+            var imageField = part.Fields.Where(field => field.PartFieldDefinition.Name == "BlogPostImage").SingleOrDefault() as MediaLibraryPickerField;
+            DateTime date = post.ContentItem.CommonPart.CreatedUtc;
+
+            <li>
+                @if (imageField != null) {
+                    foreach (var mediapart in imageField.MediaParts) {
+                        <img src="@mediapart.MediaUrl" alt="@mediapart.AlternateText" class="img-responsive" />
+                    }
+                }
+                <h5>
+                    @Html.ItemDisplayLink(title, contentItem)
+                    <small>Posted @date.ToShortDateString()</small>
+                </h5>
+            </li>
+        }
+    </ul>
+}

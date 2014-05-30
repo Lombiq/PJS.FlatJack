@@ -1,0 +1,46 @@
+﻿@using Orchard.Comments;
+@using Orchard.Comments.Models
+@using Orchard.Comments.Settings
+@using Orchard.Utility.Extensions;
+
+@{
+    CommentsPart commentsPart = Model.ContentPart;
+    var settings = commentsPart.TypePartDefinition.Settings.GetModel<CommentsPartSettings>();
+}
+
+<section class="comments columns">
+    <div class="row">
+        <div class="col-xs-12 col-sm-9 col-sm-offset-3">
+            @if (!Model.ContentPart.CommentsActive) {
+                if (Model.ContentPart.Comments.Count > 0) {
+                <h5>@T("Comments have been disabled for this content.")</h5>
+                }
+            }
+            else if (settings.MustBeAuthenticated && WorkContext.CurrentUser == null) {
+                <h5>Add Comment</h5>
+                <p>@T("You must {0} to comment.", Html.ActionLink(T("sign in").ToString(), "LogOn",
+                    new { Controller = "Account", Area = "Orchard.Users", ReturnUrl = string.Format("{0}#addacomment", Context.Request.RawUrl) }))
+                </p>
+            }
+            else if (WorkContext.CurrentUser == null && !AuthorizedFor(Permissions.AddComment)) {
+                <h5>Add Comment</h5>
+                <p>@T("You must {0} to comment.", Html.ActionLink(T("sign in").ToString(), "LogOn",
+                    new { Controller = "Account", Area = "Orchard.Users", ReturnUrl = string.Format("{0}#addacomment", Context.Request.RawUrl) }))
+                </p>
+            }
+            else {
+                <span id="comment-form-beacon" />
+                using (Html.BeginFormAntiForgeryPost(Url.Action("Create", "Comment", new { Area = "Orchard.Comments", ReturnUrl = Context.Request.ToUrlString() }), FormMethod.Post, new { id = "commentform", @class = "comment-form border-radius" })) {
+                    <h5>Add Comment</h5>
+                    @Html.ValidationSummary()
+                    if (TempData.ContainsKey("Comments.InvalidCommentEditorShape")) {
+                        @Display(TempData["Comments.InvalidCommentEditorShape"]);
+                    }
+                    else {
+                        @Display(Model.EditorShape)
+                    }
+                }
+            }
+        </div>
+    </div>
+</section>

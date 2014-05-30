@@ -1,0 +1,13 @@
+﻿<a id="branding-logo" href="@Href("~/")">
+</a>
+
+@using (Script.Foot()) {
+    <script type="text/javascript">
+        if ($('body').hasClass('base-dark')) {
+            $('#branding-logo').html('<img src="@Href(Html.ThemePath(WorkContext.CurrentTheme, "/Content/logo.png"))" class="img-responsive">');
+        }
+        else {
+            $('#branding-logo').html('<img src="@Href(Html.ThemePath(WorkContext.CurrentTheme, "/Content/light-logo.png"))" class="img-responsive">');
+        }
+    </script>
+}
