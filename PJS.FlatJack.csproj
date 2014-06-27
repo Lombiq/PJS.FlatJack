@@ -147,7 +147,6 @@
     <Content Include="Styles\social-buttons.css" />
     <Content Include="Styles\style.min.css" />
     <Content Include="Web.config" />
-    <Content Include="Views\Web.config" />
     <Content Include="Scripts\Web.config" />
     <Content Include="Styles\Web.config" />
     <Content Include="Content\Web.config" />
@@ -155,9 +154,7 @@
     <Content Include="Theme.png" />
     <Content Include="Placement.info" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Zones\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="Views\Document.cshtml" />
   </ItemGroup>
