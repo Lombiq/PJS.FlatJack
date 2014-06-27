@@ -146,6 +146,9 @@
     <Content Include="Styles\prettyPhoto.css" />
     <Content Include="Styles\social-buttons.css" />
     <Content Include="Styles\style.min.css" />
+    <Content Include="Styles\validationEngine.jquery.css">
+      <DependentUpon>validationEngine.jquery.less</DependentUpon>
+    </Content>
     <Content Include="Web.config" />
     <Content Include="Scripts\Web.config" />
     <Content Include="Styles\Web.config" />
@@ -334,6 +337,7 @@
     <Content Include="Content\fonts\fontawesome-webfont.ttf" />
     <Content Include="Content\fonts\fontawesome-webfont.woff" />
     <Content Include="Content\fonts\FontAwesome.otf" />
+    <Content Include="Styles\validationEngine.jquery.less" />
     <None Include="Views\ListByArchive.cshtml" />
     <None Include="Views\Pager.First.cshtml" />
     <Content Include="Views\Register.cshtml" />
