@@ -33,7 +33,7 @@
 @if (Html.ValidationSummary() != null) {
     <div class="alert alert-danger fade in">
         <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-        <strong>Error:</strong>
+        <strong>@T("Error:")</strong>
         <p>@Html.ValidationSummary()</p>
     </div>
 }
@@ -65,7 +65,7 @@
     
     if (userCanRegister) {
         <div class="form-group">
-            Don't have Account? @Html.ActionLink(T("Register").Text, "Register")<br />
+            @T("Don't have Account?") @Html.ActionLink(T("Register").Text, "Register")<br />
             @if (enableLostPassword) { @Html.ActionLink(T("Lost your Password?").Text, "RequestLostPassword") }
         </div>
     }

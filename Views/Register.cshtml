@@ -20,7 +20,7 @@
 @if (Html.ValidationSummary() != null) {
     <div class="alert alert-danger">
         <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-        <strong>Error:</strong>
+        <strong>@T("Error:")</strong>
         <p>@Html.ValidationSummary()</p>
     </div>
 }
@@ -49,6 +49,6 @@
         <input type="submit" class="border-radius" value="@T("Register")" />
     </div>
     <div class="form-group">
-        Already have account? @Html.ActionLink(T("Login").ToString(), "LogOn", new { Controller = "Account", Area = "Orchard.Users", ReturnUrl = (Request.QueryString["ReturnUrl"] ?? Request.RawUrl) }, new { rel = "nofollow" })
+        @T("Already have account?") @Html.ActionLink(T("Login").ToString(), "LogOn", new { Controller = "Account", Area = "Orchard.Users", ReturnUrl = (Request.QueryString["ReturnUrl"] ?? Request.RawUrl) }, new { rel = "nofollow" })
     </div>
 }

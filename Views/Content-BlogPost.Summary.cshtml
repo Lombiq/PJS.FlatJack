@@ -29,9 +29,9 @@
                     </header>
                     @Display(Model.Summary)
                     <footer>
-                        <span><em>Author:</em> <a href="/Search?q=@blogPost.CommonPart.Owner.UserName">@blogPost.CommonPart.Owner.UserName</a></span>
-                        <span><em>Posted in:</em> @Display(Model.Tags)</span>
-                        <span><em>It has:</em> <a href="@Url.ItemDisplayUrl((IContent)blogPost)">@Display(Model.CommentsCount)</a></span>
+                        <span><em>@T("Author:")</em> <a href="/Search?q=@blogPost.CommonPart.Owner.UserName">@blogPost.CommonPart.Owner.UserName</a></span>
+                        <span><em>@T("Posted in:")</em> @Display(Model.Tags)</span>
+                        <span><em>@T("It has:")</em> <a href="@Url.ItemDisplayUrl((IContent)blogPost)">@Display(Model.CommentsCount)</a></span>
                     </footer>
                 </div>
             </div>

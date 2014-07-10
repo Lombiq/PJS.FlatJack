@@ -17,9 +17,9 @@
                 <span class="month">@blogPost.CommonPart.CreatedUtc.ToLocalTime().ToString("MMM").ToLower()</span>
             </span>
             <div class="meta">
-                <span class="texthighlight">Author: <a href="/Search?q=@blogPost.CommonPart.Owner.UserName"><em>@blogPost.CommonPart.Owner.UserName</a></em></span>
-                <span class="texthighlight">Posted in: <em>@Display(Model.Tags)</em></span>
-                <span class="texthighlight">So far we have: <a href="#"><em>@Display(Model.CommentsCount)</em></a></span>
+                <span class="texthighlight">@T("Author:") <a href="/Search?q=@blogPost.CommonPart.Owner.UserName"><em>@blogPost.CommonPart.Owner.UserName</a></em></span>
+                <span class="texthighlight">@T("Posted in:") <em>@Display(Model.Tags)</em></span>
+                <span class="texthighlight">@T("So far we have:") <a href="#"><em>@Display(Model.CommentsCount)</em></a></span>
             </div>
             <div class="clearfix"></div>
         </aside>
