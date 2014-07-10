@@ -189,9 +189,6 @@
     <Content Include="Views\MenuItemLink-BeforeMain.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Parts\Search.SearchForm.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="Views\Orchard.Users\Account\RequestLostPassword.cshtml" />
   </ItemGroup>
   <ItemGroup>
@@ -222,25 +219,7 @@
     <Content Include="Views\NotFound.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Parts\Title.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\Parts\Common.Body.Summary-BlogPost.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\Parts\Tags.ShowTags.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="Views\EditorTemplates\Parts.Comment.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\Parts\Comment.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\Parts\CommentForm.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\Parts\ListOfComments.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\CommentAuthor.cshtml" />
@@ -285,15 +264,6 @@
     <Content Include="Views\MenuItemLinkdd.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Parts\Blogs.RecentBlogPosts.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\Parts\OForm.Display.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\Parts\TwitterWidget.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="Views\Widget.Wrapper.cshtml" />
   </ItemGroup>
   <ItemGroup>
@@ -304,18 +274,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Content-BlogPost.Summary.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\Parts\Comments.Count.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\Parts\Blogs.BlogArchives.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\Parts\TagCloud.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\Parts\Title_Summary.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Orchard.Tags\Home\Search.cshtml" />
@@ -342,8 +300,22 @@
     <None Include="Views\Pager.First.cshtml" />
     <Content Include="Views\Register.cshtml" />
     <Content Include="Views\Styler.cshtml" />
-    <Content Include="Views\Parts\ZenGallery.cshtml" />
     <Content Include="Views\Resources.cshtml" />
+    <Content Include="Views\Parts.Blogs.BlogArchives.cshtml" />
+    <Content Include="Views\Parts.Blogs.RecentBlogPosts.cshtml" />
+    <Content Include="Views\Parts.Comment.cshtml" />
+    <Content Include="Views\Parts.CommentForm.cshtml" />
+    <Content Include="Views\Parts.Comments.Count.cshtml" />
+    <Content Include="Views\Parts.Common.Body.Summary-BlogPost.cshtml" />
+    <Content Include="Views\Parts.ListOfComments.cshtml" />
+    <Content Include="Views\Parts.OForm.Display.cshtml" />
+    <Content Include="Views\Parts.Search.SearchForm.cshtml" />
+    <Content Include="Views\Parts.TagCloud.cshtml" />
+    <Content Include="Views\Parts.Tags.ShowTags.cshtml" />
+    <Content Include="Views\Parts.Title.cshtml" />
+    <Content Include="Views\Parts.Title_Summary.cshtml" />
+    <Content Include="Views\Parts.TwitterWidget.cshtml" />
+    <Content Include="Views\Parts.ZenGallery.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Pager.Gap.cshtml" />
