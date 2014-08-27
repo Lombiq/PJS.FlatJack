@@ -146,9 +146,6 @@
     <Content Include="Styles\prettyPhoto.css" />
     <Content Include="Styles\social-buttons.css" />
     <Content Include="Styles\style.min.css" />
-    <Content Include="Styles\validationEngine.jquery.css">
-      <DependentUpon>validationEngine.jquery.less</DependentUpon>
-    </Content>
     <Content Include="Web.config" />
     <Content Include="Scripts\Web.config" />
     <Content Include="Styles\Web.config" />
@@ -237,9 +234,6 @@
     <Content Include="Views\CommentText.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AdminMenu.cs" />
-    <Compile Include="Constants.cs" />
-    <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\ValidateController.cs" />
     <Compile Include="Gravatar\Gravatar.cs" />
     <Compile Include="Gravatar\Gremail.cs" />
@@ -249,13 +243,8 @@
     <Compile Include="Gravatar\Html\UrlHelperExtensions.cs" />
     <Compile Include="Handlers\ThemeSettingsPartHandler.cs" />
     <Compile Include="Models\ThemeSettingsPart.cs" />
-    <Compile Include="Permissions.cs" />
     <Compile Include="ResourceManifest.cs" />
     <Compile Include="Routes.cs" />
-    <Compile Include="ViewModels\ThemeSettingsViewModel.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\Admin\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\MenuItemLink.cshtml" />
@@ -295,11 +284,10 @@
     <Content Include="Content\fonts\fontawesome-webfont.ttf" />
     <Content Include="Content\fonts\fontawesome-webfont.woff" />
     <Content Include="Content\fonts\FontAwesome.otf" />
-    <Content Include="Styles\validationEngine.jquery.less" />
+    <Content Include="Views\EditorTemplates\Parts\Theme.ThemeSettings.cshtml" />
     <None Include="Views\ListByArchive.cshtml" />
     <None Include="Views\Pager.First.cshtml" />
     <Content Include="Views\Register.cshtml" />
-    <Content Include="Views\Styler.cshtml" />
     <Content Include="Views\Resources.cshtml" />
     <Content Include="Views\Parts.Blogs.BlogArchives.cshtml" />
     <Content Include="Views\Parts.Blogs.RecentBlogPosts.cshtml" />
@@ -316,6 +304,7 @@
     <Content Include="Views\Parts.Title_Summary.cshtml" />
     <Content Include="Views\Parts.TwitterWidget.cshtml" />
     <Content Include="Views\Parts.ZenGallery.cshtml" />
+    <Content Include="Views\Parts.NextPreviousLinks.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Pager.Gap.cshtml" />

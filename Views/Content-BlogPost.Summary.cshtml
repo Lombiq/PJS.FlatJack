@@ -1,27 +1,66 @@
 ﻿@using Orchard.ContentManagement;
 @using Orchard.MediaLibrary.Fields
 
-@{ 
+@{
     var blogPost = Model.ContentItem;
     var part = (Orchard.ContentManagement.ContentPart)Model.ContentItem.BlogPostPart;
     var imageField = part.Fields.Where(field => field.PartFieldDefinition.Name == "BlogPostImage").SingleOrDefault() as MediaLibraryPickerField;
+    int blogpostimagecounter = 0;
 }
+
 <div class="row blog">
     <div id="blogpost-@blogPost.Id" class="col-xs-12 single">
         <div class="inner">
             <div class="row">
                 <div class="col-xs-4 img">
-                    <a href="@Url.ItemDisplayUrl((IContent)blogPost)">
-                        @if (imageField != null) {
-                            foreach (var mediapart in Model.ContentItem.BlogPostPart.BlogPostImage.MediaParts) {
-                                <img src="@mediapart.MediaUrl" alt="@mediapart.AlternateText" />
+                    @if (imageField != null && Model.ContentItem.BlogPostPart.BlogPostImage.MediaParts.Count > 1) {
+                        <div class="post-slider">
+                            <div id="blogpost-carousel-@blogPost.Id" class="carousel slide" data-ride="carousel">
+                                <ol class="carousel-indicators">
+                                    @{blogpostimagecounter = 0;}
+                                    @foreach (var mediapart in Model.ContentItem.BlogPostPart.BlogPostImage.MediaParts) {
+                                        <li data-target="#blogpost-carousel-@blogPost.Id" data-slide-to="@blogpostimagecounter" class="@(blogpostimagecounter == 0 ? "active" : string.Empty)"></li>
+                                        blogpostimagecounter++;
+                                    }
+                                </ol>
+                                <a href="@Url.ItemDisplayUrl((IContent)blogPost)">
+                                    <div class="carousel-inner">
+                                        @{blogpostimagecounter = 0;}
+                                        @foreach (var mediapart in Model.ContentItem.BlogPostPart.BlogPostImage.MediaParts) {
+                                            <div class="item @(blogpostimagecounter == 0 ? "active" : string.Empty)">
+                                                <img src="@mediapart.MediaUrl" alt="@mediapart.AlternateText" class="img-responsive" />
+                                            </div>
+                                            blogpostimagecounter++;
+                                        }
+                                    </div>
+                                </a>
+                                <a class="left carousel-control" href="#blogpost-carousel-@blogPost.Id" data-slide="prev">
+                                    <span class="fa fa-chevron-left"></span>
+                                </a>
+                                <a class="right carousel-control" href="#blogpost-carousel-@blogPost.Id" data-slide="next">
+                                    <span class="fa fa-chevron-right"></span>
+                                </a>
+                            </div>
+                            <span class="date text-center">
+                                <span class="number">@blogPost.CommonPart.CreatedUtc.ToLocalTime().ToString("dd")</span>
+                                <span class="month">@blogPost.CommonPart.CreatedUtc.ToLocalTime().ToString("MMM").ToLower()</span>
+                            </span>
+                        </div>
+                    }
+                    else if (imageField != null && Model.ContentItem.BlogPostPart.BlogPostImage.MediaParts.Count == 1) {
+                        <a href="@Url.ItemDisplayUrl((IContent)blogPost)">
+                            @if (imageField != null) {
+                                foreach (var mediapart in Model.ContentItem.BlogPostPart.BlogPostImage.MediaParts) {
+                                    <img src="@mediapart.MediaUrl" alt="@mediapart.AlternateText" />
+                                }
                             }
-                        }
-                        <span class="date text-center">
-                            <span class="number">@blogPost.CommonPart.CreatedUtc.ToLocalTime().ToString("dd")</span>
-                            <span class="month">@blogPost.CommonPart.CreatedUtc.ToLocalTime().ToString("MMM").ToLower()</span>
-                        </span>
-                    </a>
+                            <span class="date text-center">
+                                <span class="number">@blogPost.CommonPart.CreatedUtc.ToLocalTime().ToString("dd")</span>
+                                <span class="month">@blogPost.CommonPart.CreatedUtc.ToLocalTime().ToString("MMM").ToLower()</span>
+                            </span>
+                        </a>
+                    }
+                    else { }
                 </div>
                 <div class="col-xs-8">
                     <header>

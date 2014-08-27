@@ -5,11 +5,50 @@
     var blogPost = Model.ContentItem;
     var part = (Orchard.ContentManagement.ContentPart)Model.ContentItem.BlogPostPart;
     var imageField = part.Fields.Where(field => field.PartFieldDefinition.Name == "BlogPostImage").SingleOrDefault() as MediaLibraryPickerField;
+    int blogpostimagecounter = 0;
 
     Layout.Title = blogPost.TitlePart.Title;
 }
 
 <section class="article alt">
+    <div class="row" style="margin-bottom: 50px;">
+        @if (imageField != null && Model.ContentItem.BlogPostPart.BlogPostImage.MediaParts.Count > 1) {
+            <div class="post-slider">
+                <div id="blogpost-carousel-@blogPost.Id" class="carousel slide" data-ride="carousel">
+                    <ol class="carousel-indicators">
+                        @{blogpostimagecounter = 0;}
+                        @foreach (var mediapart in Model.ContentItem.BlogPostPart.BlogPostImage.MediaParts) {
+                            <li data-target="#blogpost-carousel-@blogPost.Id" data-slide-to="@blogpostimagecounter" class="@(blogpostimagecounter == 0 ? "active" : string.Empty)"></li>
+                            blogpostimagecounter++;
+                        }
+                    </ol>
+                    <div class="carousel-inner">
+                        @{blogpostimagecounter = 0;}
+                        @foreach (var mediapart in Model.ContentItem.BlogPostPart.BlogPostImage.MediaParts) {
+                            <div class="item @(blogpostimagecounter == 0 ? "active" : string.Empty)">
+                                <img src="@mediapart.MediaUrl" alt="@mediapart.AlternateText" class="img-responsive" style="border-radius: 5px;" />
+                            </div>
+                            blogpostimagecounter++;
+                        }
+                    </div>
+                    <a class="left carousel-control" href="#blogpost-carousel-@blogPost.Id" data-slide="prev">
+                        <span class="fa fa-chevron-left"></span>
+                    </a>
+                    <a class="right carousel-control" href="#blogpost-carousel-@blogPost.Id" data-slide="next">
+                        <span class="fa fa-chevron-right"></span>
+                    </a>
+                </div>
+            </div>
+        }
+        else if (imageField != null && Model.ContentItem.BlogPostPart.BlogPostImage.MediaParts.Count == 1) {
+            if (imageField != null) {
+                foreach (var mediapart in Model.ContentItem.BlogPostPart.BlogPostImage.MediaParts) {
+                    <img src="@mediapart.MediaUrl" alt="@mediapart.AlternateText" style="border-radius: 5px;" />
+                }
+            }
+        }
+        else { }
+    </div>
     <div class="row">
         <aside class="col-xs-12 col-sm-3 hidden-xs">
             <span class="date backgroundhighlight text-center border-radius">
@@ -21,6 +60,7 @@
                 <span class="texthighlight">@T("Posted in:") <em>@Display(Model.Tags)</em></span>
                 <span class="texthighlight">@T("So far we have:") <a href="#"><em>@Display(Model.CommentsCount)</em></a></span>
             </div>
+            @Display(Model.NextPrevious)
             <div class="clearfix"></div>
         </aside>
         <article class="col-xs-12 col-sm-9">

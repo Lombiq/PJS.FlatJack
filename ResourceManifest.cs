@@ -10,7 +10,6 @@ namespace PJS.FlatJack {
             manifest.DefineScript("Theme-ValidationEngine").SetUrl("jquery.validationEngine.js").SetVersion("2.6.2").SetDependencies("Theme-ValidationEngine-en");
             manifest.DefineScript("Isotope").SetUrl("jquery.isotope.min.js").SetVersion("1.5.25").SetDependencies("jQuery");
             manifest.DefineScript("prettyPhoto").SetUrl("jquery.prettyPhoto.js").SetVersion("3.1.5").SetDependencies("jQuery");
-            manifest.DefineScript("Styler").SetUrl("jquery.styler.js").SetDependencies("jQuery");
 
             manifest.DefineStyle("ThemeStyle").SetUrl("style.min.css");
             manifest.DefineStyle("Theme-ValidationEngine").SetUrl("validationEngine.jquery.css");

@@ -1,3 +1,6 @@
+@using Orchard.ContentManagement;
+@using PJS.FlatJack.Models;
+
 @functions {
     // To support the layout classifaction below. Implementing as a razor function because we can, could otherwise be a Func<string[], string, string> in the code block following.
     string CalcuClassify(string[] zoneNames, string classNamePrefix) {
@@ -9,6 +12,8 @@
 
 @{
     Display.Insertions();
+
+    var settings = WorkContext.CurrentSite.As<ThemeSettingsPart>();
 
     /* Some useful shortcuts or settings
     ***************************************************************/
@@ -45,7 +50,7 @@
 
 <!-- Wrap all page content here -->
 @tag.StartElement
-<div class="header">
+<div class="header @(settings.FixedHeader ? "fixed" : "")">
     <div class="container">
         <div class="row">
             @if (Model.Header != null) {

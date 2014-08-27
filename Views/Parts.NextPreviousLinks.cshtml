@@ -1,0 +1,13 @@
+﻿@using Orchard.ContentManagement
+
+<div class="postPagination">
+    @if (Model.PreviousItem != null) {
+        ContentItem previousItem = Model.PreviousItem;
+        <a class="prev backgroundhighlight border-radius pull-left" href="@Url.ItemDisplayUrl(previousItem)"><i class="fa fa-chevron-left"></i></a>
+    }
+    @if (Model.NextItem != null) {
+        ContentItem nextItem = Model.NextItem;
+        <a class="next backgroundhighlight border-radius pull-right" href="@Url.ItemDisplayUrl(nextItem)"><i class="fa fa-chevron-right"></i></a>
+    }
+    <div class="clearfix"></div>
+</div>

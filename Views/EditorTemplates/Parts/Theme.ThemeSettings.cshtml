@@ -1,4 +1,4 @@
-﻿@model PJS.FlatJack.ViewModels.ThemeSettingsViewModel
+﻿﻿@model PJS.FlatJack.Models.ThemeSettingsPart
 
 @{
     Script.Require("jQuery");
@@ -23,28 +23,59 @@
 }
 
 <style type="text/css">
-    .list-inline { padding-left: 0; list-style: none; }
-        .list-inline > li { display: inline-block; padding: 10px 5px 0 5px; }
-            .list-inline > li .base, .list-inline > li .highlight { width: 35px; height: 35px; cursor: pointer; }
-            .list-inline > li #dark { background-color: #4d4f53; }
-            .list-inline > li #light { background-color: #dadada; }
+    .list-inline {
+        padding-left: 0;
+        list-style: none;
+    }
 
-            .list-inline > li #red { background-color: #d03333; }
-            .list-inline > li #purple { background-color: #c563de; }
-            .list-inline > li #green-alt { background-color: #83de63; }
-            .list-inline > li #blue { background-color: #63abde; }
-            .list-inline > li #green { background-color: #63debd; }
+        .list-inline > li {
+            display: inline-block;
+            padding: 10px 5px 0 5px;
+        }
 
-            .list-inline > li .base.active, .list-inline > li .base:hover, .list-inline > li .highlight.active, .list-inline > li .highlight:hover { outline: 2px solid #2c3e50; }
+            .list-inline > li .base, .list-inline > li .highlight {
+                width: 35px;
+                height: 35px;
+                cursor: pointer;
+            }
+
+            .list-inline > li #dark {
+                background-color: #4d4f53;
+            }
+
+            .list-inline > li #light {
+                background-color: #dadada;
+            }
+
+            .list-inline > li #red {
+                background-color: #d03333;
+            }
+
+            .list-inline > li #purple {
+                background-color: #c563de;
+            }
+
+            .list-inline > li #green-alt {
+                background-color: #83de63;
+            }
+
+            .list-inline > li #blue {
+                background-color: #63abde;
+            }
+
+            .list-inline > li #green {
+                background-color: #63debd;
+            }
+
+            .list-inline > li .base.active, .list-inline > li .base:hover, .list-inline > li .highlight.active, .list-inline > li .highlight:hover {
+                outline: 2px solid #2c3e50;
+            }
 </style>
 
-@{ Layout.Title = string.Format("FlatJack » {0}", T("Options").ToString()); }
-
-@using (Html.BeginFormAntiForgeryPost()) {
-    Html.ValidationSummary();
-    
-    <fieldset>
-        <span id="lblBase" class="hint">@T("Select the base color that you want use")</span>
+<fieldset>
+    <legend>@T("Theme Options")</legend>
+    <div>
+        <span class="hint">@T("Select the base color that you want use")</span>
         <ul class="list-inline">
             <li>
                 <div id="dark" class="base @(Model.Base == "dark" ? "active" : string.Empty)"></div>
@@ -53,10 +84,9 @@
                 <div id="light" class="base @(Model.Base == "light" ? "active" : string.Empty)"></div>
             </li>
         </ul>
-    </fieldset>
-    
-    <fieldset>
-        <span id="lblHighlight" class="hint">@T("Select the highlight color that you want use")</span>
+    </div>
+    <div>
+        <span class="hint">@T("Select the highlight color that you want use")</span>
         <ul class="list-inline">
             <li>
                 <div id="red" class="highlight @(Model.Highlight == "red" ? "active" : string.Empty)"></div>
@@ -74,11 +104,11 @@
                 <div id="green" class="highlight @(Model.Highlight == "green" ? "active" : string.Empty)"></div>
             </li>
         </ul>
-    </fieldset>
-    
-    <fieldset>
-        @Html.HiddenFor(m => m.Base)
-        @Html.HiddenFor(m => m.Highlight)
-        <button class="primaryAction" type="submit" name="submit.Save" value="submit.Save">@T("Save")</button>
-    </fieldset>
-}
+    </div>
+    <div>
+        @Html.CheckBoxFor(m => m.FixedHeader)@T("Use Fixed Header")
+        <span class="hint">@T("Select this checkbox to use a Fixed Header")</span>
+    </div>
+    @Html.HiddenFor(m => m.Base)
+    @Html.HiddenFor(m => m.Highlight)
+</fieldset>

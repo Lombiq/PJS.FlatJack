@@ -1,4 +1,4 @@
-@using Orchard.ContentManagement;
+﻿@using Orchard.ContentManagement;
 @using PJS.FlatJack.Models;
 
 @{
@@ -36,10 +36,11 @@
 
     <script type="text/javascript">
         (function (d) { d.className = "dyn" + d.className.substring(6, d.className.length); })(document.documentElement);
+        window.applicationBaseUrl = @Html.Raw(HttpUtility.JavaScriptStringEncode(Url.Content("~/"), true));
     </script>
 </head>
 
-<body class="theme-@WorkContext.CurrentTheme.Id base-@settings.Base highlight-@settings.Highlight">
+<body class="theme-@WorkContext.CurrentTheme.Id base-@settings.Base highlight-@settings.Highlight @(settings.FixedHeader ? "fixed" : "")">
     @Display(Model.Body)
     @Display(Model.Tail)
 </body>

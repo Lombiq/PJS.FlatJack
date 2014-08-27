@@ -14,29 +14,15 @@ namespace PJS.FlatJack {
             return new[] {
                 new RouteDescriptor {
                     Priority = 5,
-                    Route = new Route("Admin/" + Constants.RoutesAreaName,
-                        new RouteValueDictionary {
-                            {"area", Constants.RoutesAreaName},
-                            {"controller", "Admin"},
-                            {"action", "Index"}
-                        },
-                        new RouteValueDictionary(),
-                        new RouteValueDictionary {
-                            {"area", Constants.RoutesAreaName}
-                        },
-                        new MvcRouteHandler())
-                },
-                new RouteDescriptor {
-                    Priority = 5,
                     Route = new Route("ValidateUserName",
                         new RouteValueDictionary {
-                            {"area", Constants.RoutesAreaName},
+                            {"area", "PJS.FlatJack"},
                             {"controller", "Validate"},
                             {"action", "ValidateUserName"}
                         },
                         new RouteValueDictionary(),
                         new RouteValueDictionary {
-                            {"area", Constants.RoutesAreaName}
+                            {"area", "PJS.FlatJack"}
                         },
                         new MvcRouteHandler())
                 },
@@ -44,13 +30,13 @@ namespace PJS.FlatJack {
                     Priority = 5,
                     Route = new Route("ValidateUserEmail",
                         new RouteValueDictionary {
-                            {"area", Constants.RoutesAreaName},
+                            {"area", "PJS.FlatJack"},
                             {"controller", "Validate"},
                             {"action", "ValidateUserEmail"}
                         },
                         new RouteValueDictionary(),
                         new RouteValueDictionary {
-                            {"area", Constants.RoutesAreaName}
+                            {"area", "PJS.FlatJack"}
                         },
                         new MvcRouteHandler())
                 },
@@ -58,13 +44,13 @@ namespace PJS.FlatJack {
                     Priority = 5,
                     Route = new Route("ValidateUserNameEmail",
                         new RouteValueDictionary {
-                            {"area", Constants.RoutesAreaName},
+                            {"area", "PJS.FlatJack"},
                             {"controller", "Validate"},
                             {"action", "ValidateUserNameEmail"}
                         },
                         new RouteValueDictionary(),
                         new RouteValueDictionary {
-                            {"area", Constants.RoutesAreaName}
+                            {"area", "PJS.FlatJack"}
                         },
                         new MvcRouteHandler())
                 }
