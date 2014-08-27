@@ -285,6 +285,7 @@
     <Content Include="Content\fonts\fontawesome-webfont.woff" />
     <Content Include="Content\fonts\FontAwesome.otf" />
     <Content Include="Views\EditorTemplates\Parts\Theme.ThemeSettings.cshtml" />
+    <Content Include="Views\DotNestBadgeOfHonor.cshtml" />
     <None Include="Views\ListByArchive.cshtml" />
     <None Include="Views\Pager.First.cshtml" />
     <Content Include="Views\Register.cshtml" />
