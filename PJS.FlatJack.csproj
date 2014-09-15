@@ -146,6 +146,9 @@
     <Content Include="Styles\prettyPhoto.css" />
     <Content Include="Styles\social-buttons.css" />
     <Content Include="Styles\style.min.css" />
+    <Content Include="Styles\validationEngine.jquery.css">
+      <DependentUpon>validationEngine.jquery.less</DependentUpon>
+    </Content>
     <Content Include="Web.config" />
     <Content Include="Scripts\Web.config" />
     <Content Include="Styles\Web.config" />
@@ -286,8 +289,9 @@
     <Content Include="Content\fonts\FontAwesome.otf" />
     <Content Include="Views\EditorTemplates\Parts\Theme.ThemeSettings.cshtml" />
     <Content Include="Views\DotNestBadgeOfHonor.cshtml" />
-    <None Include="Views\ListByArchive.cshtml" />
-    <None Include="Views\Pager.First.cshtml" />
+    <Content Include="Styles\validationEngine.jquery.less" />
+    <Content Include="Views\ListByArchive.cshtml" />
+    <Content Include="Views\Pager.First.cshtml" />
     <Content Include="Views\Register.cshtml" />
     <Content Include="Views\Resources.cshtml" />
     <Content Include="Views\Parts.Blogs.BlogArchives.cshtml" />
@@ -311,7 +315,7 @@
     <Content Include="Views\Pager.Gap.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Views\Pager.Last.cshtml" />
+    <Content Include="Views\Pager.Last.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Pager.Next.cshtml" />
