@@ -14,29 +14,4 @@
 @tag.StartElement
     @* see MenuItem shape template *@
     @DisplayChildren(Model)
-
-    @if (WorkContext.CurrentUser != null) {
-        dynamic user = WorkContext.CurrentUser.ContentItem;
-        <li class="with-sub">
-            <a href="#"><i class="fa fa-user"></i>&nbsp;@Html.ItemDisplayText(WorkContext.CurrentUser)&nbsp;<i class="fa fa-angle-down"></i></a>
-            <ul>
-                <li>
-                    @Html.ActionLink(T("Sign Out").ToString(), "LogOff", new { Controller = "Account", Area = "Orchard.Users", ReturnUrl = Context.Request.RawUrl }, new { rel = "nofollow" })
-                </li>
-                <li>
-                    @Html.ActionLink(T("Change Password").ToString(), "ChangePassword", new { Controller = "Account", Area = "Orchard.Users" })
-                </li>
-                @if (AuthorizedFor(Orchard.Security.StandardPermissions.AccessAdminPanel)) {
-                    <li>
-                        @Html.ActionLink(T("Dashboard").ToString(), "Index", new { Area = "Dashboard", Controller = "Admin" })
-                    </li>
-                }
-            </ul>
-        </li>
-    }
-    else {
-        <li>
-            @Html.ActionLink(T("Sign In").ToString(), "LogOn", new { Controller = "Account", Area = "Orchard.Users", ReturnUrl = (Request.QueryString["ReturnUrl"] ?? Request.RawUrl) }, new { rel = "nofollow" })
-        </li>
-    }
 @tag.EndElement

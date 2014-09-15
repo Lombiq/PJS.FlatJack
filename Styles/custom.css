@@ -1,0 +1,129 @@
+﻿/* Sticky footer styles
+-------------------------------------------------- */
+html,
+body { height: 100%; /* The html and body elements cannot have any padding or margin. */ }
+/* Wrapper for page content to push down footer */
+#wrap { min-height: 100%; height: auto; /* Negative indent footer by its height */ margin: 0 auto -70px; /* Pad bottom by footer height */ padding-bottom: 70px; }
+/* Set the fixed height of the footer here */
+.footer-bottom { height: 70px; }
+/* Pad top by header height */
+.columns { padding-top: 20px; }
+
+
+/* Zone Styles
+-------------------------------------------------- */
+.zone-aside-first h3, .zone-aside-second h3 { border: none; padding-bottom: 0; }
+.zone-aside-first .widget, .zone-aside-second .widget { margin-bottom: 45px; }
+.zone-aside-first .search, .zone-aside-second .search { margin-bottom: 0; }
+
+
+/* Navigation Styles
+-------------------------------------------------- */
+#menu-main-menu li { white-space: nowrap; }
+#menu-main-menu li.current { border-width: 0 0 2px 0 !important; }
+
+/* Lists
+-------------------------------------------------- */
+.columns ul, ul.blog-posts, ul.comment-list { list-style-type: none; padding-left: 0; }
+
+
+/* Forms
+-------------------------------------------------- */
+.checkbox label { font-size: 14px; line-height: inherit !important; }
+
+
+/* Breadcrumbs
+-------------------------------------------------- */
+.breadcrumb { padding: 0; background-color: transparent; }
+    .breadcrumb > li + li:before { color: inherit; }
+
+
+/* Division styles
+-------------------------------------------------- */
+.division { margin: 0 auto 10px auto; float: none; overflow: hidden; width: 100%; position: relative; text-align: center; }
+    .division .line { border-top: 1px solid #ffffff; width: 34%; top: 10px; position: absolute; }
+    .division .l { left: 0; }
+    .division .r { right: 0; }
+    .division span { color: #fff; font-size: 17px; }
+
+
+/* Blog Styles
+-------------------------------------------------- */
+.blog .single { margin-bottom: 45px !important; }
+    .blog .single footer span { font-style: normal; margin-right: 15px; }
+        .blog .single footer span a { font-style: normal; margin-right: 0; }
+ul.blog-posts li:first-child { margin-top: -20px; }
+ul.blog-posts li:last-child, ul.content-items li:last-child { margin-bottom: 0 !important; }
+
+
+/* Comment Styles
+-------------------------------------------------- */
+.comments ul li .avatar { margin-right: 20px; display: block; }
+.comments ul li .commentp { margin-left: 80px; }
+ul.comment-list ul.comment-list { margin-left: 80px; }
+
+
+/* Recent Blog Post Styles
+-------------------------------------------------- */
+ul.recent-posts { list-style-type: none; padding-left: 0; }
+    ul.recent-posts > li { float: left; margin-bottom: 10px; width: 100%; }
+        ul.recent-posts > li:last-child { margin-bottom: 45px; }
+    ul.recent-posts img { width: 55px; height: 55px; float: left; margin-right: 10px; }
+    ul.recent-posts h5 small { display: block; margin-top: 7px; }
+
+
+/* Blog Archive Styles
+-------------------------------------------------- */
+ul.archiveMonthList li { border-bottom: 1px solid #4d4f53; }
+    ul.archiveMonthList li:before { font-family: 'FontAwesome'; content: "\f054"; display: inline; }
+
+
+/* Pagination Styles
+-------------------------------------------------- */
+.pagination > li > a, .pagination > li > span { border: none; }
+
+
+/* Latest Twitter Widget Styles
+-------------------------------------------------- */
+ul.latest-twitter-list { list-style-type: none; padding-left: 0; }
+    ul.latest-twitter-list li { margin-bottom: 10px; }
+    ul.latest-twitter-list h5 { display: inline; }
+
+
+/* oForm Styles
+-------------------------------------------------- */
+.footer form { margin-top: 1.5em; margin-bottom: 1.5em; line-height: 1.5em; }
+
+
+/* Footer Social Link styles
+-------------------------------------------------- */
+.footer ul.social-links { list-style: none; margin: 0; padding: 0; }
+    .footer ul.social-links li { display: inline-block; margin-right: 8px; height: 27px; width: 27px; border-radius: 50%; background-color: #37393d; }
+        .footer ul.social-links li a i { height: 27px; width: 27px; display: table-cell; font-size: 1.2em; vertical-align: middle; text-align: center; }
+
+
+/* Zen Gallery styles
+-------------------------------------------------- */
+.portfolio-filter { padding: 25px 15px !important; }
+
+
+/* Isotope Animating
+-------------------------------------------------- */
+.isotope,
+.isotope .isotope-item { /* change duration value to whatever you like */ -webkit-transition-duration: 0.8s; -moz-transition-duration: 0.8s; -ms-transition-duration: 0.8s; -o-transition-duration: 0.8s; transition-duration: 0.8s; }
+.isotope { -webkit-transition-property: height, width; -moz-transition-property: height, width; -ms-transition-property: height, width; -o-transition-property: height, width; transition-property: height, width; }
+    .isotope .isotope-item { -webkit-transition-property: -webkit-transform, opacity; -moz-transition-property: -moz-transform, opacity; -ms-transition-property: -ms-transform, opacity; -o-transition-property: -o-transform, opacity; transition-property: transform, opacity; }
+        /**** disabling Isotope CSS3 transitions ****/
+        .isotope.no-transition,
+        .isotope.no-transition .isotope-item,
+        .isotope .isotope-item.no-transition { -webkit-transition-duration: 0s; -moz-transition-duration: 0s; -ms-transition-duration: 0s; -o-transition-duration: 0s; transition-duration: 0s; }
+
+/* Styler correction
+-------------------------------------------------- */
+.features .container .row div h3 .circle i { color: white !important; }
+
+/* move arrows on slider */
+.carousel-control .icon-prev, .carousel-control .icon-next, .carousel-control .fa-chevron-left, .carousel-control .fa-chevron-right { position: absolute; top: 50%; left: 50%; z-index: 5; display: inline-block; }
+
+/* add user icon before menu */
+.menuUserName > a:before { content: "\f007"; font-family: "FontAwesome"; margin-right: 5px; }

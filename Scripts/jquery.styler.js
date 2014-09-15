@@ -52,16 +52,16 @@ function supports_html5_storage() {
 }
 
 function changeBase() {
-    $('link[rel=stylesheet][href="' + window.applicationBaseUrl + '/Themes/PJS.FlatJack/Styles/skin-dark-blue.css"]').remove();
-    $('link[rel=stylesheet][href="' + window.applicationBaseUrl + '/Themes/PJS.FlatJack/Styles/skin-dark-green-alt.css"]').remove();
-    $('link[rel=stylesheet][href="' + window.applicationBaseUrl + '/Themes/PJS.FlatJack/Styles/skin-dark-green.css"]').remove();
-    $('link[rel=stylesheet][href="' + window.applicationBaseUrl + '/Themes/PJS.FlatJack/Styles/skin-dark-purple.css"]').remove();
-    $('link[rel=stylesheet][href="' + window.applicationBaseUrl + '/Themes/PJS.FlatJack/Styles/skin-dark-red.css"]').remove();
-    $('link[rel=stylesheet][href="' + window.applicationBaseUrl + '/Themes/PJS.FlatJack/Styles/skin-light-blue.css"]').remove();
-    $('link[rel=stylesheet][href="' + window.applicationBaseUrl + '/Themes/PJS.FlatJack/Styles/skin-light-green-alt.css"]').remove();
-    $('link[rel=stylesheet][href="' + window.applicationBaseUrl + '/Themes/PJS.FlatJack/Styles/skin-light-green.css"]').remove();
-    $('link[rel=stylesheet][href="' + window.applicationBaseUrl + '/Themes/PJS.FlatJack/Styles/skin-light-purple.css"]').remove();
-    $('link[rel=stylesheet][href="' + window.applicationBaseUrl + '/Themes/PJS.FlatJack/Styles/skin-light-red.css"]').remove();
+    $('link[rel=stylesheet][href="/Themes/PJS.FlatJack/Styles/skins/dark-blue.css"]').remove();
+    $('link[rel=stylesheet][href="/Themes/PJS.FlatJack/Styles/skins/dark-green-alt.css"]').remove();
+    $('link[rel=stylesheet][href="/Themes/PJS.FlatJack/Styles/skins/dark-green.css"]').remove();
+    $('link[rel=stylesheet][href="/Themes/PJS.FlatJack/Styles/skins/dark-purple.css"]').remove();
+    $('link[rel=stylesheet][href="/Themes/PJS.FlatJack/Styles/skins/dark-red.css"]').remove();
+    $('link[rel=stylesheet][href="/Themes/PJS.FlatJack/Styles/skins/light-blue.css"]').remove();
+    $('link[rel=stylesheet][href="/Themes/PJS.FlatJack/Styles/skins/light-green-alt.css"]').remove();
+    $('link[rel=stylesheet][href="/Themes/PJS.FlatJack/Styles/skins/light-green.css"]').remove();
+    $('link[rel=stylesheet][href="/Themes/PJS.FlatJack/Styles/skins/light-purple.css"]').remove();
+    $('link[rel=stylesheet][href="/Themes/PJS.FlatJack/Styles/skins/light-red.css"]').remove();
 
     $('body').removeClass(function (index, css) {
         return (css.match(/\bbase-\S+/g) || []).join(' ');
@@ -70,7 +70,7 @@ function changeBase() {
     var fileref = document.createElement("link");
     fileref.setAttribute("rel", "stylesheet");
     fileref.setAttribute("type", "text/css");
-    fileref.setAttribute("href", window.applicationBaseUrl + "/Themes/PJS.FlatJack/Styles/skin-" + sessionStorage.Base + "-" + sessionStorage.Highlight + ".css");
+    fileref.setAttribute("href", "/Themes/PJS.FlatJack/Styles/skins/" + sessionStorage.Base + "-" + sessionStorage.Highlight + ".css");
     document.getElementsByTagName("head")[0].appendChild(fileref);
 
     $('body').addClass(sessionStorage.Base);
@@ -89,16 +89,16 @@ function changeBase() {
 }
 
 function changeHighlight() {
-    $('link[rel=stylesheet][href="' + window.applicationBaseUrl + '/Themes/PJS.FlatJack/Styles/skin-dark-blue.css"]').remove();
-    $('link[rel=stylesheet][href="' + window.applicationBaseUrl + '/Themes/PJS.FlatJack/Styles/skin-dark-green-alt.css"]').remove();
-    $('link[rel=stylesheet][href="' + window.applicationBaseUrl + '/Themes/PJS.FlatJack/Styles/skin-dark-green.css"]').remove();
-    $('link[rel=stylesheet][href="' + window.applicationBaseUrl + '/Themes/PJS.FlatJack/Styles/skin-dark-purple.css"]').remove();
-    $('link[rel=stylesheet][href="' + window.applicationBaseUrl + '/Themes/PJS.FlatJack/Styles/skin-dark-red.css"]').remove();
-    $('link[rel=stylesheet][href="' + window.applicationBaseUrl + '/Themes/PJS.FlatJack/Styles/skin-light-blue.css"]').remove();
-    $('link[rel=stylesheet][href="' + window.applicationBaseUrl + '/Themes/PJS.FlatJack/Styles/skin-light-green-alt.css"]').remove();
-    $('link[rel=stylesheet][href="' + window.applicationBaseUrl + '/Themes/PJS.FlatJack/Styles/skin-light-green.css"]').remove();
-    $('link[rel=stylesheet][href="' + window.applicationBaseUrl + '/Themes/PJS.FlatJack/Styles/skin-light-purple.css"]').remove();
-    $('link[rel=stylesheet][href="' + window.applicationBaseUrl + '/Themes/PJS.FlatJack/Styles/skin-light-red.css"]').remove();
+    $('link[rel=stylesheet][href="/Themes/PJS.FlatJack/Styles/skins/dark-blue.css"]').remove();
+    $('link[rel=stylesheet][href="/Themes/PJS.FlatJack/Styles/skins/dark-green-alt.css"]').remove();
+    $('link[rel=stylesheet][href="/Themes/PJS.FlatJack/Styles/skins/dark-green.css"]').remove();
+    $('link[rel=stylesheet][href="/Themes/PJS.FlatJack/Styles/skins/dark-purple.css"]').remove();
+    $('link[rel=stylesheet][href="/Themes/PJS.FlatJack/Styles/skins/dark-red.css"]').remove();
+    $('link[rel=stylesheet][href="/Themes/PJS.FlatJack/Styles/skins/light-blue.css"]').remove();
+    $('link[rel=stylesheet][href="/Themes/PJS.FlatJack/Styles/skins/light-green-alt.css"]').remove();
+    $('link[rel=stylesheet][href="/Themes/PJS.FlatJack/Styles/skins/light-green.css"]').remove();
+    $('link[rel=stylesheet][href="/Themes/PJS.FlatJack/Styles/skins/light-purple.css"]').remove();
+    $('link[rel=stylesheet][href="/Themes/PJS.FlatJack/Styles/skins/light-red.css"]').remove();
 
     $('body').removeClass(function (index, css) {
         return (css.match(/\bhighlight-\S+/g) || []).join(' ');
@@ -107,11 +107,26 @@ function changeHighlight() {
     var fileref = document.createElement("link");
     fileref.setAttribute("rel", "stylesheet");
     fileref.setAttribute("type", "text/css");
-    fileref.setAttribute("href", window.applicationBaseUrl + "/Themes/PJS.FlatJack/Styles/skin-" + sessionStorage.Base + "-" + sessionStorage.Highlight + ".css");
+    fileref.setAttribute("href", "/Themes/PJS.FlatJack/Styles/skins/" + sessionStorage.Base + "-" + sessionStorage.Highlight + ".css");
     document.getElementsByTagName("head")[0].appendChild(fileref);
 
     $('body').addClass(sessionStorage.Base);
 
     $('.highlight').removeClass('active');
     $('#' + sessionStorage.Highlight).addClass('active');
+}
+
+function changeFixedHeader() {
+    if (sessionStorage.FixedHeader == 'true') {
+        $('body').addClass('fixed');
+        $('.header').addClass('fixed');
+
+        $('#fixedheader').prop('checked', true);
+    }
+    else {
+        $('body').removeClass('fixed');
+        $('.header').removeClass('fixed');
+
+        $('#fixedheader').prop('checked', false);
+    }
 }

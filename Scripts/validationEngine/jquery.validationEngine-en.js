@@ -143,19 +143,19 @@
                 },
                 // --- CUSTOM RULES -- Those are specific to the demos, they can be removed or changed to your likings
                 "ajaxUserName": {
-                    "url": "/ValidateUserName",
+                    "url": window.applicationBaseUrl + "ValidateUserName",
                     "alertText": "Username is already taken",
                     "alertTextOk": "Available",
                     "alertTextLoad": "Validating, please wait"
                 },
                 "ajaxUserEmail": {
-                    "url": "/ValidateUserEmail",
+                    "url": window.applicationBaseUrl + "ValidateUserEmail",
                     "alertText": "Email Address has already been registered",
                     "alertTextOk": "Available",
                     "alertTextLoad": "Validating, please wait"
                 },
                 "ajaxUserNameEmail": {
-                    "url": "/ValidateUserNameEmail",
+                    "url": window.applicationBaseUrl + "ValidateUserNameEmail",
                     "alertText": "Username or Email Address not found",
                     "alertTextOk": "Found",
                     "alertTextLoad": "Validating, please wait"

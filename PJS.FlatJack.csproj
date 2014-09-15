@@ -126,29 +126,34 @@
     <Content Include="Content\prettyPhoto\light_square\default_thumbnail.gif" />
     <Content Include="Content\prettyPhoto\light_square\loader.gif" />
     <Content Include="Content\prettyPhoto\light_square\sprite.png" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\custom.js" />
+    <Content Include="Scripts\jquery-migrate-1.2.1.min.js" />
+    <Content Include="Scripts\jquery.easing.min.js" />
     <Content Include="Scripts\jquery.isotope.min.js" />
     <Content Include="Scripts\jquery.prettyPhoto.js" />
-    <Content Include="Scripts\jquery.validationEngine-en.js" />
-    <Content Include="Scripts\jquery.validationEngine.js" />
-    <Content Include="Scripts\script.min.js" />
+    <Content Include="Scripts\retina.js" />
     <Content Include="Scripts\jquery.styler.js" />
-    <Content Include="Styles\bootstrap-social.css" />
-    <Content Include="Styles\skin-dark-blue.css" />
-    <Content Include="Styles\skin-dark-green-alt.css" />
-    <Content Include="Styles\skin-dark-green.css" />
-    <Content Include="Styles\skin-dark-purple.css" />
-    <Content Include="Styles\skin-dark-red.css" />
-    <Content Include="Styles\skin-light-blue.css" />
-    <Content Include="Styles\skin-light-green-alt.css" />
-    <Content Include="Styles\skin-light-green.css" />
-    <Content Include="Styles\skin-light-purple.css" />
-    <Content Include="Styles\skin-light-red.css" />
+    <Content Include="Scripts\validationEngine\jquery.validationEngine-en.js" />
+    <Content Include="Scripts\validationEngine\jquery.validationEngine.js" />
+    <Content Include="Styles\bootstrap.min.css" />
+    <Content Include="Styles\custom.css" />
+    <Content Include="Styles\style.css" />
+    <Content Include="Styles\font-awesome-4.2.0\css\font-awesome.css" />
+    <Content Include="Styles\font-awesome-4.2.0\css\font-awesome.min.css" />
+    <Content Include="Styles\font-awesome-4.2.0\fonts\fontawesome-webfont.svg" />
+    <Content Include="Styles\skins\dark-blue.css" />
+    <Content Include="Styles\skins\dark-green-alt.css" />
+    <Content Include="Styles\skins\dark-green.css" />
+    <Content Include="Styles\skins\dark-purple.css" />
+    <Content Include="Styles\skins\dark-red.css" />
+    <Content Include="Styles\skins\light-blue.css" />
+    <Content Include="Styles\skins\light-green-alt.css" />
+    <Content Include="Styles\skins\light-green.css" />
+    <Content Include="Styles\skins\light-purple.css" />
+    <Content Include="Styles\skins\light-red.css" />
     <Content Include="Styles\prettyPhoto.css" />
-    <Content Include="Styles\social-buttons.css" />
-    <Content Include="Styles\style.min.css" />
-    <Content Include="Styles\validationEngine.jquery.css">
-      <DependentUpon>validationEngine.jquery.less</DependentUpon>
-    </Content>
+    <Content Include="Styles\validationEngine\validationEngine.jquery.css" />
     <Content Include="Web.config" />
     <Content Include="Scripts\Web.config" />
     <Content Include="Styles\Web.config" />
@@ -245,6 +250,7 @@
     <Compile Include="Gravatar\Html\HtmlHelperExtensions.cs" />
     <Compile Include="Gravatar\Html\UrlHelperExtensions.cs" />
     <Compile Include="Handlers\ThemeSettingsPartHandler.cs" />
+    <Compile Include="MainMenu.cs" />
     <Compile Include="Models\ThemeSettingsPart.cs" />
     <Compile Include="ResourceManifest.cs" />
     <Compile Include="Routes.cs" />
@@ -289,7 +295,10 @@
     <Content Include="Content\fonts\FontAwesome.otf" />
     <Content Include="Views\EditorTemplates\Parts\Theme.ThemeSettings.cshtml" />
     <Content Include="Views\DotNestBadgeOfHonor.cshtml" />
-    <Content Include="Styles\validationEngine.jquery.less" />
+    <Content Include="Styles\font-awesome-4.2.0\fonts\fontawesome-webfont.eot" />
+    <Content Include="Styles\font-awesome-4.2.0\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Styles\font-awesome-4.2.0\fonts\fontawesome-webfont.woff" />
+    <Content Include="Styles\font-awesome-4.2.0\fonts\FontAwesome.otf" />
     <Content Include="Views\ListByArchive.cshtml" />
     <Content Include="Views\Pager.First.cshtml" />
     <Content Include="Views\Register.cshtml" />
@@ -346,6 +355,10 @@
     <ProjectReference Include="..\..\Modules\Orchard.MediaLibrary\Orchard.MediaLibrary.csproj">
       <Project>{73a7688a-5bd3-4f7e-adfa-ce36c5a10e3b}</Project>
       <Name>Orchard.MediaLibrary</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Modules\Orchard.Tags\Orchard.Tags.csproj">
+      <Project>{5d0f00f0-26c9-4785-ad61-b85710c60eb0}</Project>
+      <Name>Orchard.Tags</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\Modules\Orchard.Search\Orchard.Search.csproj">
       <Project>{4be4eb01-ac56-4048-924e-2ca77f509aba}</Project>

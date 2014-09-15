@@ -15,9 +15,19 @@
 
     Style.Include("http://fonts.googleapis.com/css?family=Lato:300,400,700");
 
-    Style.Require("ThemeStyle");
-    Style.Include("skin-" + settings.Base + "-" + settings.Highlight);
+    Style.Require("Bootstrap");
+    Style.Require("Font-Awesome");
+    Style.Require("FlatJack");
+    Style.Include("skins/" + settings.Base + "-" + settings.Highlight);
+    Style.Require("Theme-ValidationEngine");
+    Style.Require("Custom");
 
     Script.Include("~/Core/Shapes/Scripts/html5.js").UseCondition("lt IE 9").AtHead();
-    Script.Require("ThemeScript");
+    Script.Require("jQuery-Migrate").AtHead();
+    Script.Require("Bootstrap");
+    Script.Require("Easing");
+    Script.Require("Retina");
+    Script.Require("Theme-ValidationEngine-en");
+    Script.Require("Theme-ValidationEngine");
+    Script.Require("Custom");
 }
