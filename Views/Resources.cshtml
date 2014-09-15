@@ -18,7 +18,7 @@
     Style.Require("Bootstrap");
     Style.Require("Font-Awesome");
     Style.Require("FlatJack");
-    Style.Include("skins/" + settings.Base + "-" + settings.Highlight);
+    Style.Include(string.Format("skins/{0}-{1}.css", settings.Base, settings.Highlight));
     Style.Require("Theme-ValidationEngine");
     Style.Require("Custom");
 
