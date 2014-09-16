@@ -73,7 +73,7 @@
                         @if (Model.Tags.Items.Count > 0 && ((IEnumerable<ShowTagViewModel>)Model.Tags.Items[0].Tags).Any()) {
                             <span><em>@T("Posted in:")</em> @Display(Model.Tags)</span>
                         }
-                        <span><em>@T("It has:")</em> <a href="@Url.ItemDisplayUrl((IContent)blogPost)">@Display(Model.CommentsCount)</a></span>
+                        <span class="texthighlight"><em>@Display(Model.CommentsCount)</em></span>
                     </footer>
                 </div>
             </div>
