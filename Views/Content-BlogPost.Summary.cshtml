@@ -70,7 +70,7 @@
                     @Display(Model.Summary)
                     <footer>
                         <span><em>@T("Author:")</em> <a href="/Search?q=@blogPost.CommonPart.Owner.UserName">@blogPost.CommonPart.Owner.UserName</a></span>
-                        @if ((Model.Tags.Items[0].Tags as IEnumerable<ShowTagViewModel>).Any()) {
+                        @if (Model.Tags.Items.Count > 0 && ((IEnumerable<ShowTagViewModel>)Model.Tags.Items[0].Tags).Any()) {
                             <span><em>@T("Posted in:")</em> @Display(Model.Tags)</span>
                         }
                         <span><em>@T("It has:")</em> <a href="@Url.ItemDisplayUrl((IContent)blogPost)">@Display(Model.CommentsCount)</a></span>

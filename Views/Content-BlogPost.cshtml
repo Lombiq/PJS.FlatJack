@@ -58,7 +58,7 @@
             </span>
             <div class="meta">
                 <span class="texthighlight">@T("Author:") <a href="/Search?q=@blogPost.CommonPart.Owner.UserName"><em>@blogPost.CommonPart.Owner.UserName</a></em></span>
-                @if ((Model.Tags.Items[0].Tags as IEnumerable<ShowTagViewModel>).Any()) {
+                @if (Model.Tags.Items.Count > 0 && ((IEnumerable<ShowTagViewModel>)Model.Tags.Items[0].Tags).Any()) {
                     <span class="texthighlight">@T("Posted in:") <em>@Display(Model.Tags)</em></span>
                 }
                 <span class="texthighlight">@T("So far we have:") <a href="#"><em>@Display(Model.CommentsCount)</em></a></span>
