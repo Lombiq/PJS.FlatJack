@@ -9,13 +9,13 @@
                 $('.base').on('click', function (e) {
                     $('.base.active').removeClass('active');
                     $('#' + $(this).attr('id')).addClass('active');
-                    $('#Base').val($(this).attr('id'));
+                    $('#@(Html.FieldIdFor(m => m.Base))').val($(this).attr('id'));
                 });
 
                 $('.highlight').on('click', function (e) {
                     $('.highlight.active').removeClass('active');
                     $('#' + $(this).attr('id')).addClass('active');
-                    $('#Highlight').val($(this).attr('id'));
+                    $('#@(Html.FieldIdFor(m => m.Highlight))').val($(this).attr('id'));
                 });
             });
         </script>
