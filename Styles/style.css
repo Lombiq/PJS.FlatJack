@@ -438,7 +438,7 @@ ul.social {
 			width: 32px;
 			background-repeat: no-repeat;
 			background-position: center center;
-			background-image: url('../images/input-search.png');
+			background-image: url('../Content/input-search.png');
 			top:6px;
 		}
 		.footer .footer-top .tweet { font-style: italic; }
@@ -537,7 +537,7 @@ ul.social {
 							position: absolute;
 							background-position: center center;
 							background-repeat: no-repeat;
-							background-image: url('../images/plus-icon.png');
+							background-image: url('../Content/plus-icon.png');
 							top:0;
 							bottom: 0;
 							left: 0;
@@ -688,7 +688,7 @@ ul.social {
 				position: absolute;
 				background-position: center center;
 				background-repeat: no-repeat;
-				background-image: url('../images/plus-icon.png');
+				background-image: url('../Content/plus-icon.png');
 				top:0;
 				bottom: 0;
 				left: 0;
@@ -739,7 +739,7 @@ ul.social {
 				font-style: italic;
 				background-repeat: no-repeat;
 				background-position: 12px center;
-				background-image: url('../images/email-input.png');
+				background-image: url('../Content/email-input.png');
 				display: block;
 				height: 50px;
 			}
@@ -816,8 +816,8 @@ ul.social {
 			background-position: 13px;
 			background-repeat: no-repeat;
 		}
-		.columns form input[type=text] { background-image: url('../images/input-name.png'); }
-		.columns form input[type=email] { background-image:  url('../images/input-email.png'); }
+		.columns form input[type=text] { background-image: url('../Content/input-name.png'); }
+		.columns form input[type=email] { background-image:  url('../Content/input-email.png'); }
 		.columns form input[type=submit] {
 			border: none;
 			padding: 10px 30px;
@@ -839,7 +839,7 @@ ul.social {
 			-moz-box-sizing: border-box;
 			box-sizing: border-box;
 			display: block;
-			background-image: url('../images/input-textarea.png');
+			background-image: url('../Content/input-textarea.png');
 			background-repeat: no-repeat;
 			height: 195px;
 			background-position: 13px 13px;
@@ -859,7 +859,7 @@ ul.social {
 				.columns form.search input[type=search]:-ms-input-placeholder { font-style: italic; }
 			.columns form.search input[type=submit] {
 				background-repeat: no-repeat;
-				background-image: url('../images/input-search.png');
+				background-image: url('../Content/input-search.png');
 				width: 35px;
 				height: 34px;
 				position: absolute;
@@ -922,7 +922,7 @@ ul.social {
    ============================= */
 .hugeImage {
 	margin: 40px 0 20px;
-	background: url('../images/sample/hugeImage.jpg') no-repeat;
+	background: url('../Content/sample/hugeImage.jpg') no-repeat;
 	height: 200px;
 	width: 100%;
 	background-size: 100%;
@@ -1045,7 +1045,7 @@ aside h3 { /* this may be redundant now */
 			position: absolute;
 			background-position: center center;
 			background-repeat: no-repeat;
-			background-image: url('../images/plus-icon.png');
+			background-image: url('../Content/plus-icon.png');
 			top:0;
 			bottom: 0;
 			left: 0;
@@ -1212,7 +1212,7 @@ aside h3 { /* this may be redundant now */
 				.portfolio-single .portfolioslider .flex-direction-nav .flex-prev {
 					left: 16px;
 					background-repeat: no-repeat;
-					background-image: url('../images/carousel-left.png');
+					background-image: url('../Content/carousel-left.png');
 					height: 22px;
 					width: 22px;
 					display: block;
@@ -1223,7 +1223,7 @@ aside h3 { /* this may be redundant now */
 				.portfolio-single .portfolioslider .flex-direction-nav .flex-next {
 					right: 16px;
 					background-repeat: no-repeat;
-					background-image: url('../images/carousel-right.png');
+					background-image: url('../Content/carousel-right.png');
 					height: 22px;
 					width: 22px;
 					display: block;
@@ -1284,12 +1284,12 @@ aside h3 { /* this may be redundant now */
 					}
 						.portfolio-single .carousel .flex-direction-nav li a.flex-prev {
 							background-repeat: no-repeat;
-							background-image: url('../images/carousel-left.png');
+							background-image: url('../Content/carousel-left.png');
 							margin-right: 9px;
 						}
 						.portfolio-single .carousel .flex-direction-nav li a.flex-next {
 							background-repeat: no-repeat;
-							background-image: url('../images/carousel-right.png');
+							background-image: url('../Content/carousel-right.png');
 						}
 
 
