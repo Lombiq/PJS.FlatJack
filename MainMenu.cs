@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using Orchard;
 using Orchard.ContentManagement;
 using Orchard.Core.Navigation.Models;
@@ -25,7 +26,7 @@ namespace PJS.FlatJack {
                     .OrderBy(x => x.MenuPosition)
                     .List();
 
-                var itemCount = menuParts.Last().MenuPosition + 1;
+                var itemCount = Convert.ToInt32(decimal.Parse(menuParts.Last().MenuPosition)) + 1;
 
                 if (_orchardServices.WorkContext.CurrentUser != null) {
                     builder.Add(T(_orchardServices.WorkContext.CurrentUser.UserName), itemCount.ToString(), item => item.Url("#").AddClass("menuUserName"));
