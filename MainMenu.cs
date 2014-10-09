@@ -6,7 +6,7 @@ using Orchard.Localization;
 using Orchard.UI.Navigation;
 using Orchard.Core.Title.Models;
 
-namespace PJS.ReTouch {
+namespace PJS.FlatJack {
     public class MainMenu : IMenuProvider {
         private readonly IContentManager _contentManager;
         private readonly IOrchardServices _orchardServices;
