@@ -1,7 +1,7 @@
 ﻿using Orchard.ContentManagement;
 
 namespace PJS.FlatJack.Models {
-    public class ThemeSettingsPart : ContentPart {
+    public class FlatJackThemeSettingsPart : ContentPart {
         public string Base {
             get { return this.Retrieve(r => r.Base, "dark"); }
             set { this.Store(r => r.Base, value); }

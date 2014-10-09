@@ -249,9 +249,9 @@
     <Compile Include="Gravatar\GrofileInfo.cs" />
     <Compile Include="Gravatar\Html\HtmlHelperExtensions.cs" />
     <Compile Include="Gravatar\Html\UrlHelperExtensions.cs" />
-    <Compile Include="Handlers\ThemeSettingsPartHandler.cs" />
+    <Compile Include="Handlers\FlatJackThemeSettingsPartHandler.cs" />
     <Compile Include="MainMenu.cs" />
-    <Compile Include="Models\ThemeSettingsPart.cs" />
+    <Compile Include="Models\FlatJackThemeSettingsPart.cs" />
     <Compile Include="ResourceManifest.cs" />
     <Compile Include="Routes.cs" />
   </ItemGroup>
@@ -293,7 +293,7 @@
     <Content Include="Content\fonts\fontawesome-webfont.ttf" />
     <Content Include="Content\fonts\fontawesome-webfont.woff" />
     <Content Include="Content\fonts\FontAwesome.otf" />
-    <Content Include="Views\EditorTemplates\Parts\Theme.ThemeSettings.cshtml" />
+    <Content Include="Views\EditorTemplates\Parts\FlatJackThemeSettings.cshtml" />
     <Content Include="Views\DotNestBadgeOfHonor.cshtml" />
     <Content Include="Styles\font-awesome-4.2.0\fonts\fontawesome-webfont.eot" />
     <Content Include="Styles\font-awesome-4.2.0\fonts\fontawesome-webfont.ttf" />

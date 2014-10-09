@@ -2,7 +2,7 @@
 @using PJS.FlatJack.Models;
 
 @{
-    var settings = WorkContext.CurrentSite.As<ThemeSettingsPart>();
+    var settings = WorkContext.CurrentSite.As<FlatJackThemeSettingsPart>();
 
     string title = Convert.ToString(Model.Title);
     string siteName = Convert.ToString(WorkContext.CurrentSite.SiteName);

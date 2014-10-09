@@ -6,11 +6,11 @@ using Orchard.Localization;
 
 namespace PJS.FlatJack.Handlers {
     [UsedImplicitly]
-    public class ThemeSettingsPartHandler : ContentHandler {
-        public ThemeSettingsPartHandler() {
+    public class FlatJackThemeSettingsPartHandler : ContentHandler {
+        public FlatJackThemeSettingsPartHandler() {
             T = NullLocalizer.Instance;
-            Filters.Add(new ActivatingFilter<ThemeSettingsPart>("Site"));
-            Filters.Add(new TemplateFilterForPart<ThemeSettingsPart>("ThemeSettings", "Parts/Theme.ThemeSettings", "theme"));
+            Filters.Add(new ActivatingFilter<FlatJackThemeSettingsPart>("Site"));
+            Filters.Add(new TemplateFilterForPart<FlatJackThemeSettingsPart>("FlatJackThemeSettings", "Parts/FlatJackThemeSettings", "Theme-FlatJack"));
         }
 
         public Localizer T { get; set; }
@@ -19,7 +19,7 @@ namespace PJS.FlatJack.Handlers {
             if (context.ContentItem.ContentType != "Site")
                 return;
             base.GetItemMetadata(context);
-            context.Metadata.EditorGroupInfo.Add(new GroupInfo(T("Theme")));
+            context.Metadata.EditorGroupInfo.Add(new GroupInfo(T("Theme-FlatJack")));
         }
     }
 }
