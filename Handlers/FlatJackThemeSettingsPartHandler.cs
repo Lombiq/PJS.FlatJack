@@ -1,11 +1,9 @@
-﻿using JetBrains.Annotations;
-using PJS.FlatJack.Models;
+﻿using PJS.FlatJack.Models;
 using Orchard.ContentManagement;
 using Orchard.ContentManagement.Handlers;
 using Orchard.Localization;
 
 namespace PJS.FlatJack.Handlers {
-    [UsedImplicitly]
     public class FlatJackThemeSettingsPartHandler : ContentHandler {
         public FlatJackThemeSettingsPartHandler() {
             T = NullLocalizer.Instance;
