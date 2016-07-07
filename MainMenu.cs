@@ -6,6 +6,7 @@ using Orchard.Core.Navigation.Models;
 using Orchard.Localization;
 using Orchard.UI.Navigation;
 using Orchard.Core.Title.Models;
+using System.Globalization;
 
 namespace PJS.FlatJack {
     public class MainMenu : IMenuProvider {
@@ -26,7 +27,7 @@ namespace PJS.FlatJack {
                     .OrderBy(x => x.MenuPosition)
                     .List();
 
-                var itemCount = Convert.ToInt32(decimal.Parse(menuParts.Last().MenuPosition)) + 1;
+                var itemCount = Convert.ToInt32(decimal.Parse(menuParts.Last().MenuPosition, NumberStyles.Any, CultureInfo.InvariantCulture)) + 1;
 
                 if (_orchardServices.WorkContext.CurrentUser != null) {
                     builder.Add(T(_orchardServices.WorkContext.CurrentUser.UserName), itemCount.ToString(), item => item.Url("#").AddClass("menuUserName"));
