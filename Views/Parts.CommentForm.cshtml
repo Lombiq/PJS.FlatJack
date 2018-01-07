@@ -19,13 +19,13 @@
             else if (settings.MustBeAuthenticated && WorkContext.CurrentUser == null) {
                 <h5>@T("Add Comment")</h5>
                 <p>@T("You must {0} to comment.", Html.ActionLink(T("sign in").ToString(), "LogOn",
-                    new { Controller = "Account", Area = "Orchard.Users", ReturnUrl = string.Format("{0}#addacomment", Context.Request.RawUrl) }))
+                    new { Controller = "Account", Area = "Orchard.Users", ReturnUrl = string.Format("{0}#addacomment", (Context.Request.QueryString["ReturnUrl"] ?? Context.Request.RawUrl)) }))
                 </p>
             }
             else if (WorkContext.CurrentUser == null && !AuthorizedFor(Permissions.AddComment)) {
                 <h5>@T("Add Comment")</h5>
                 <p>@T("You must {0} to comment.", Html.ActionLink(T("sign in").ToString(), "LogOn",
-                    new { Controller = "Account", Area = "Orchard.Users", ReturnUrl = string.Format("{0}#addacomment", Context.Request.RawUrl) }))
+                    new { Controller = "Account", Area = "Orchard.Users", ReturnUrl = string.Format("{0}#addacomment", (Context.Request.QueryString["ReturnUrl"] ?? Context.Request.RawUrl)) }))
                 </p>
             }
             else {
