@@ -79,7 +79,7 @@ namespace PJS.FlatJack.Gravatar {
             if (string.IsNullOrEmpty(email) || string.IsNullOrEmpty(email.Trim()))
                 throw new ArgumentException("The email is empty.", "email");
 
-            var imageUrl = "http://www.gravatar.com/avatar.php?";
+            var imageUrl = "https://www.gravatar.com/avatar.php?";
             var hash = new Gremail(email).Hash();
 
             imageUrl += "gravatar_id=" + hash;

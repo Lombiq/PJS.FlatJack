@@ -69,7 +69,7 @@ namespace PJS.FlatJack.Gravatar {
             if (string.IsNullOrEmpty(email) || string.IsNullOrEmpty(email.Trim()))
                 throw new ArgumentException("The email cannot be empty.", "email");
 
-            return "http://www.gravatar.com/" + new Gremail(email).Hash();
+            return "https://www.gravatar.com/" + new Gremail(email).Hash();
         }
 
         /// <summary>
