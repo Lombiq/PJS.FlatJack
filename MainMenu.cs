@@ -1,14 +1,15 @@
-﻿using System;
-using System.Linq;
-using Orchard;
+﻿using Orchard;
 using Orchard.ContentManagement;
 using Orchard.Core.Navigation.Models;
+using Orchard.Core.Title.Models;
 using Orchard.Localization;
 using Orchard.UI.Navigation;
-using Orchard.Core.Title.Models;
+using System;
 using System.Globalization;
+using System.Linq;
 
-namespace PJS.FlatJack {
+namespace PJS.FlatJack
+{
     public class MainMenu : IMenuProvider {
         private readonly IContentManager _contentManager;
         private readonly IOrchardServices _orchardServices;
@@ -27,7 +28,8 @@ namespace PJS.FlatJack {
                     .OrderBy(x => x.MenuPosition)
                     .List();
 
-                var itemCount = Convert.ToInt32(decimal.Parse(menuParts.Last().MenuPosition, NumberStyles.Any, CultureInfo.InvariantCulture)) + 1;
+                var menuPosition = menuParts.Any() ? menuParts.Last().MenuPosition : "0";
+                var itemCount = Convert.ToInt32(decimal.Parse(menuPosition, NumberStyles.Any, CultureInfo.InvariantCulture)) + 1;
 
                 if (_orchardServices.WorkContext.CurrentUser != null) {
                     builder.Add(T(_orchardServices.WorkContext.CurrentUser.UserName), itemCount.ToString(), item => item.Url("#").AddClass("menuUserName"));
